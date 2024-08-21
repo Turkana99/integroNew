@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 .jumbotron {
-  background-image: url(../../../../public/images/aboutJumbBg.svg);
+  background-image: url(../../../assets/images/aboutJumbBg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -38,28 +38,28 @@
   .about_1 {
     width: 480px;
     height: 260px ;
-    background-image: url(../../../../public/images/about1.svg);
+    background-image: url(../../../assets/images/about1.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }
   .about_2 {
     width: 135px;
     height: 188px ;
-    background-image: url(../../../../public/images/about2.svg);
+    background-image: url(../../../assets/images/about2.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }
   .about_3 {
     width: 199px ;
     height: 259px ;
-    background-image: url(../../../../public/images/about3.svg);
+    background-image: url(../../../assets/images/about3.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }
   .about_4 {
     width: 350px ;
     height: 202px ;
-    background-image: url(../../../../public/images/about4.svg);
+    background-image: url(../../../assets/images/about4.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }

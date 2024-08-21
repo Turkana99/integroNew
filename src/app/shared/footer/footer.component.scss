@@ -81,5 +81,9 @@
 @media only screen and (max-width: 1060px) {
   .footer {
     padding: 0px 20px !important;
+    .col-lg-4{
+      padding: 0px!important;
+      margin: 0px!important;
+    }
   }
 }

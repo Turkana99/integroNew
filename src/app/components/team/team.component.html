@@ -1,14 +1,45 @@
 <!--Jumbotron-->
 <div class="jumbotron w-100 p-0 m-0">
-  <div class="overlay w-100 p-0 m-0">
-    <div
-      class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
-    >
-      <p class="sub_route">
-        <a routerLink="/main">Home </a>
-        <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/team">Team</a>
-      </p>
+    <div class="overlay w-100 p-0 m-0">
+      <div
+        class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
+      >
+        <p class="sub_route">
+          <a routerLink="/main">Home </a>
+          <i class="fa-solid fa-angle-right px-2"></i>
+          <a routerLink="/team">Team</a>
+        </p>
+      </div>
     </div>
   </div>
-</div>
+  
+  <!--Team-->
+  <section class="creative-team-section team">
+    <div class="auto-container">
+        <div class="creative-title--wrap px-0 mx-0">
+          <p>About Us</p>
+          <h1>Who we are?</h1>
+        </div>
+        <div class="row">
+            <div class="creative-team--block" *ngFor="let item of team">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image">
+                              <img [src]="item.img" alt="" />
+                        </figure>
+                        <div class="info-box">
+                            <h4 class="name">{{item.name}}</h4>
+                            <span class="designation">{{item.position}}</span><span class="share-icon fa fa-share-alt"></span>
+                            <div class="social-links">
+                                <a href="https://www.fiverr.com/aliali44"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.fiverr.com/aliali44"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.fiverr.com/aliali44"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
