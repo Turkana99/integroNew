@@ -1,0 +1,110 @@
+@import "../../styles/variables.scss";
+
+.jumbotron {
+  background-image: url(../../../../public/images/jumbBg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 53%;
+  height: 728px;
+  position: relative;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 5%,
+      rgba(255, 255, 255, 0.4) 25%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    .jumb-content {
+      padding-left: 70px;
+      width: 60%;
+      height: 100% !important;
+      font-family: "Poppins", sans-serif !important;
+      .sub_title {
+        font-size: 16px;
+        color: $title-color;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 60px;
+        color: #493979;
+        font-weight: 700;
+        line-height: 60px;
+      }
+      .content {
+        font-size: 16px;
+        font-weight: 300;
+      }
+      ::ng-deep .p-button {
+        background-color: #493979;
+        color: white;
+        border: none;
+        font-size: 14px;
+        font-weight: 400 !important;
+        &:hover {
+          background-color: white;
+          color: #493979;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .jumb-content {
+    padding: 0px 20px !important;
+  }
+  .sub_title {
+    font-size: 14px !important;
+  }
+  h1 {
+    font-size: 40px !important;
+    line-height: 45px !important;
+  }
+  .content {
+    font-size: 14px !important;
+    padding: 10px 0px !important;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .jumb-content {
+    width: 100% !important;
+  }
+  .sub_title {
+    font-size: 12px !important;
+  }
+  h1 {
+    font-size: 30px !important;
+    line-height: 32px !important;
+  }
+  .content {
+    font-size: 12px !important;
+    padding: 5px 0px !important;
+  }
+  ::ng-deep .p-button {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 555px) {
+  .sub_title {
+    font-size: 12px !important;
+  }
+  h1 {
+    font-size: 30px !important;
+    line-height: 32px !important;
+  }
+  .content {
+    font-size: 12px !important;
+    padding: 5px 0px !important;
+  }
+  ::ng-deep .p-button {
+    font-size: 12px !important;
+  }
+}

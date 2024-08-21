@@ -1,0 +1,133 @@
+<div class="w-100 content header d-flex justify-content-center pt-2 m-0">
+  <nav class="w-100 navbar navbar-expand-lg">
+    <div class="container-fluid px- m-0">
+      <div
+        class="navbar-brand d-flex justify-content-start align-items-center gap-2"
+      >
+        <div class="logo">
+          <img
+            class="white-logo frs_logo"
+            src="images/Logo.svg"
+            alt="Logo"
+            [ngStyle]="{ opacity: whiteLogo ? 0 : 1 }"
+          />
+          <img
+            class="white-logo scd_logo"
+            src="images/LogoWh.svg"
+            alt="Logo"
+            [ngStyle]="{ opacity: whiteLogo ? 1 : 0 }"
+          />
+        </div>
+        <div>
+          <h1 class="p-0 m-0">INTEGRO</h1>
+          <p class="p-0 m-0">ATTORNEYS & CONSULTANTS</p>
+        </div>
+      </div>
+      <button
+        class="navbar-toggler custom-toggler pt-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+      <i class="fa-solid fa-bars navbar-toggler-icon"></i>
+      </button>
+      <div
+        class="collapse navbar-collapse d-flex justify-content-end"
+        id="navbarNavDropdown"
+      >
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="main"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="about"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >About</a
+            >
+          </li>
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="service"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >Services</a
+            >
+          </li>
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="team"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >Team</a
+            >
+          </li>
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="partner"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >Partners</a
+            >
+          </li>
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="blog"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >Blogs</a
+            >
+          </li>
+          <li class="nav-item px-2">
+            <a
+              class="nav-link"
+              routerLink="contact"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="router-link-active"
+              >Contact</a
+            >
+          </li>
+
+          <li class="nav-item dropdown px-2">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Az
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item">Az</a>
+              </li>
+              <li>
+                <a class="dropdown-item">En</a>
+              </li>
+              <li>
+                <a class="dropdown-item">Ru</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

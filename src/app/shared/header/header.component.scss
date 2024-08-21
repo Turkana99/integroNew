@@ -1,0 +1,225 @@
+@import "../../styles/variables.scss";
+
+$tl: 0.6s;
+.content {
+  padding: 0px 50px;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  /* Base styles for .navbar */
+  .navbar {
+    width: 100%;
+    background-color: transparent;
+
+    .navbar-nav .nav-item a {
+      color: black;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      overflow: hidden;
+      transition: color 0.3s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: black;
+        transition: width 0.6s ease;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+
+    .navbar-nav > li > .dropdown-menu a:active {
+      background-color: $main-color;
+      color: white;
+    }
+  }
+  & .navbar-brand {
+    font-family: "Poppins", sans-serif !important;
+    .logo {
+      position: relative;
+      width: 65px;
+      height: 65px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h1 {
+      color: $main-color;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+    p {
+      color: $title-color;
+      font-size: 8px;
+    }
+  }
+
+  .router-link-active {
+    color: $main-color;
+    font-weight: bold;
+    border-bottom: 1px solid $main-color;
+  }
+
+  /* Styles for when .navbar-inverse is applied */
+  &.navbar-inverse {
+    background-color: $main-color !important;
+
+    .navbar-nav .nav-item a {
+      color: white !important;
+      &::before {
+        background-color: white !important;
+      }
+    }
+
+    .router-link-active {
+      color: white !important;
+      border-bottom: 1px solid white !important;
+    }
+
+    .navbar-brand {
+      h1,
+      p {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.white-logo {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 300ms ease;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.custom-toggler {
+  border: none;
+  font-size: 20px !important;
+  color: white !important;
+}
+
+.navbar-nav > li > .dropdown-menu .dropdown-item {
+  color: gray !important;
+}
+
+/* Hide the toggler button on larger screens */
+@media (min-width: 1200px) {
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 1235px) {
+  .navbar-brand {
+    margin-right: 6px !important;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .content {
+    padding: 0px;
+  }
+  .header {
+    padding: 0 !important;
+    justify-content: start;
+    overflow-y: auto !important;
+    .navbar {
+      width: 100%;
+      overflow-y: auto !important;
+      background-color: $main-color !important;
+      overflow-y: auto;
+      .navbar-nav {
+        display: block !important;
+        width: 100%;
+        .nav-item a {
+          color: white !important;
+          &::before {
+            background-color: white !important;
+          }
+        }
+      }
+    }
+    .collapse {
+      padding-top: 20px;
+    }
+    .navbar-toggler .custom-toggler {
+      display: block !important;
+    }
+    .frs_logo {
+      opacity: 0 !important;
+    }
+    .scd_logo {
+      opacity: 1 !important;
+    }
+    .navbar-brand {
+      h1 {
+        color: white !important;
+      }
+      p {
+        color: white !important;
+      }
+    }
+    .navbar-expand-lg {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .navbar-expand-lg .navbar-toggler {
+      display: block;
+    }
+    .navbar-expand-lg .navbar-collapse {
+      display: none !important;
+      flex-basis: 100%;
+      flex-grow: 1;
+      align-items: center;
+    }
+    .navbar-expand-lg .navbar-collapse.collapse.show {
+      display: flex !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header {
+    padding: 0 !important;
+    justify-content: start;
+    overflow-y: auto !important;
+    .navbar {
+      width: 100%;
+      overflow-y: auto !important;
+    }
+    .collapse {
+      padding-top: 20px;
+    }
+    .navbar-nav .nav-item a {
+      color: black !important; /* Ensure good contrast on smaller screens */
+    }
+    .navbar {
+      background-color: $main-color !important;
+      overflow-y: auto;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import "../../styles/variables.scss";
+.jumbotron {
+  background-image: url(../../../../public/images/aboutJumbBg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 53%;
+  height: 400px;
+  position: relative;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 5%,
+      rgba(255, 255, 255, 0.4) 25%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    .jumb-content {
+      width: 100%;
+      height: 100% !important;
+      font-family: "Poppins", sans-serif !important;
+      color: white;
+      a {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.about {
+  .about_1 {
+    width: 480px;
+    height: 260px ;
+    background-image: url(../../../../public/images/about1.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .about_2 {
+    width: 135px;
+    height: 188px ;
+    background-image: url(../../../../public/images/about2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .about_3 {
+    width: 199px ;
+    height: 259px ;
+    background-image: url(../../../../public/images/about3.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .about_4 {
+    width: 350px ;
+    height: 202px ;
+    background-image: url(../../../../public/images/about4.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .about_content {
+    font-family: "Poppins", sans-serif !important;
+    span {
+      font-size: 16px;
+      color: $title-color;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 60px;
+      color: #493979;
+      font-weight: 700;
+      line-height: 60px;
+    }
+    p {
+      line-height: 35px;
+      font-size: 16px;
+    }
+  }
+}
