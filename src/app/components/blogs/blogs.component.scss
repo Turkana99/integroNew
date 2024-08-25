@@ -33,3 +33,109 @@
     }
   }
 }
+
+.content{
+  padding: 0px 10vw;
+}
+
+.blog {
+  font-family: "Poppins", sans-serif !important;
+  span {
+    font-size: 16px;
+    color: $title-color;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    color: #493979;
+    font-weight: 700;
+    line-height: 60px;
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+  .blog_item {
+    font-family: "Poppins", sans-serif !important;
+    padding: 35px 50px;
+    ::ng-deep .p-card{
+      font-family: "Poppins", sans-serif !important;
+      color: black;
+      img{
+        width: 100%;
+        min-height: 320px;
+        padding: 0px;
+        margin: 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+    }
+    ::ng-deep .p-card-content{
+      padding: 0px!important;
+      color: black;
+      font-size: 14px;
+      line-height: 30px;
+    }
+    ::ng-deep .p-button{
+      background-color: transparent;
+      border: none;
+      color: #493979;
+      padding: 0px;
+      font-weight: 600;
+    }
+    @media (max-width: 992px) {
+      padding: 35px 50px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 20px 30px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 15px 15px;
+    }
+
+    .col-lg-2 {
+      margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        width: 33.33%;
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      @media (max-width: 576px) {
+        width: 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      @media (max-width: 400px) {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+}

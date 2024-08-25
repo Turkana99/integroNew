@@ -12,3 +12,34 @@
     </div>
   </div>
 </div>
+
+<!--Blog-->
+<div class="blog content pt-4 pb-5">
+  <div class="d-flex flex-column align-items-center">
+    <span>Blog</span>
+    <h1 class="pb-4">Our Blogs</h1>
+  </div>
+  <div class="d-flex justify-content-center m-0 ">
+    <div class="row m-0 blog_item">
+      <div class="col-lg-4 col-md-6 col-sm-12 pb-4" *ngFor="let blog of blogs">
+        <p-card [header]="blog.title" class="w-100 p-0 m-0">
+          <ng-template pTemplate="header">
+              <img alt="Card" [src]="blog.img" />
+          </ng-template>
+          <p class="p-0">
+              {{blog.description}}
+          </p>
+          <ng-template pTemplate="footer">
+              <div class="flex mt-1">
+                  <p-button  severity="secondary" class="w-full" styleClass="w-full">Read More <i class="fa-solid fa-right-long ps-2"></i></p-button>
+              </div>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

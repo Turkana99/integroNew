@@ -12,3 +12,133 @@
     </div>
   </div>
 </div>
+
+<!--Contact-->
+<div class="contact row content m-0">
+  <div class="d-flex flex-column align-items-center py-3">
+  <span>Contact</span>
+  <h1 class="pb-4">Contact Us</h1>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+    <p>
+      <i class="fa-solid fa-phone pe-2"></i>203 Fake St. Mountain View, San
+      Francisco, California, USA
+    </p>
+    <p><i class="fa-solid fa-envelope pe-2"></i> +99450 6883448</p>
+    <p><i class="fa-solid fa-location-dot pe-2"></i> www.integrolaw.az</p>
+
+    <ul class="d-flex justify-content-start nav-item p-0 m-0">
+      <li>
+        <a
+          [href]=""
+          target="_blank"
+          class="nav-link py-3 ps-0 pe-2 m-0"
+          aria-current="page"
+          data-bs-toggle="tooltip"
+          data-bs-placement="left"
+          data-bs-original-title="Home"
+        >
+          <div class="sosial-icon">
+            <img src="../../../assets/images/facebookBlck.svg" alt="" />
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          [href]=""
+          target="_blank"
+          class="nav-link py-3 pe-2"
+          title=""
+          data-bs-toggle="tooltip"
+          data-bs-placement="left"
+          data-bs-original-title="Dashboard"
+        >
+          <div class="sosial-icon">
+            <img src="../../../assets/images/twitterBlck.svg" alt="" />
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          [href]=""
+          target="_blank"
+          class="nav-link py-3 pe-2"
+          title=""
+          data-bs-toggle="tooltip"
+          data-bs-placement="left"
+          data-bs-original-title="Orders"
+        >
+          <div class="sosial-icon">
+            <img src="../../../assets/images/linkedinBlck.svg" alt="" />
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          [href]=""
+          target="_blank"
+          class="nav-link py-3 pe-2"
+          title=""
+          data-bs-toggle="tooltip"
+          data-bs-placement="left"
+          data-bs-original-title="Products"
+        >
+          <div class="sosial-icon">
+            <img src="../../../assets/images/instagramBlck.svg" alt="" />
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column gap-3">
+    <form [formGroup]="feedbackForm" class="d-flex flex-column border_line gap-3">
+      <input
+        type="text"
+        pInputText
+        placeholder="Name*"
+        class="w-100"
+        formControlName="fullName"
+      />
+      <div class="d-flex gap-2">
+        <input
+          type="text"
+          pInputText
+          placeholder="Email"
+          class="flex-fill"
+          formControlName="emailAddress"
+        />
+        <input
+          type="text"
+          pInputText
+          placeholder="Phone number"
+          class="flex-fill"
+          formControlName="phoneNumber"
+        />
+      </div>
+      <textarea
+        rows="5"
+        cols="30"
+        pInputTextarea
+        placeholder="Message"
+        formControlName="content"
+      ></textarea>
+      <div class="d-flex justify-content-start pb-5">
+        <p-button label="Send" />
+      </div>
+    </form>
+  </div>
+</div>
+<div class="p-0 m-0">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97236.44637535338!2d49.77255925639497!3d40.39469399742881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2sBaku!5e0!3m2!1sen!2saz!4v1724612581349!5m2!1sen!2saz"
+    width="100%"
+    height="450"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+<!--Toasts-->
+<!-- <p-toast></p-toast> -->
+<!--/Toasts-->

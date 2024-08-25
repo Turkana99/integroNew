@@ -33,3 +33,108 @@
     }
   }
 }
+
+.content{
+  padding: 30px 12vw;
+}
+
+.contact {
+  font-family: "Poppins", sans-serif !important;
+  span {
+    font-size: 16px;
+    color: $title-color;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    color: #493979;
+    font-weight: 700;
+    line-height: 60px;
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+  h2 {
+    font-size: 30px;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: bold;
+  }
+  i {
+    color: $main-color;
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif !important;
+    line-height: 40px;
+  }
+
+  ul {
+    list-style-type: none !important;
+    li:first-child {
+      font-size: 16px !important;
+      padding-bottom: 20px;
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    li {
+      font-size: 14px !important;
+      line-height: 30px;
+      padding: 0px;
+      font-family: "Poppins", sans-serif !important;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .nav-link {
+    border: none;
+    .sosial-icon {
+      width: 38px !important;
+      height: 38px !important;
+      img {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  }
+  ::ng-deep .p-button {
+    padding: 15px 55px;
+    border: none;
+    background-color: $main-color;
+    color: white;
+    font-size: 12px;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif !important;
+  }
+  ::ng-deep .p-inputtext {
+    width: 100% !important;
+  }
+  .title-form {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 500;
+  }
+  .brd_line{
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+}
