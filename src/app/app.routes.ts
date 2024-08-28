@@ -44,7 +44,7 @@ export const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: 'blog-detail/:id',
+    path: 'blog-detail/:title',
     component: BlogDetailComponent,
   },
   {

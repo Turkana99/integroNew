@@ -1,11 +1,9 @@
 <!--Jumbotron-->
 <div class="jumbotron w-100 p-0 m-0">
   <div class="overlay w-100 p-0 m-0">
-    <div
-      class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
-    >
+    <div class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center">
       <p class="sub_route">
-        <a routerLink="/main">Home </a>
+        <a routerLink="/main">Home</a>
         <i class="fa-solid fa-angle-right px-2"></i>
         <a routerLink="/service">Services</a>
       </p>
@@ -13,7 +11,25 @@
   </div>
 </div>
 
-<!--Services-->
-<div class="row">
-  <div></div>
+<!-- Services -->
+<div class="d-flex flex-column align-items-center title pt-5">
+  <span>Practice Areas</span>
+  <h1 class="pb-4">Our Services</h1>
 </div>
+
+<div class="services-container content pb-5">
+  <div class="services">
+    <div class="service_item" *ngFor="let item of services; let i = index" [class.center-last]="isLastElement(i)">
+      <div class="border-line d-flex flex-column align-items-center py-4">
+        <div class="service_img d-flex justify-content-center align-items-center">
+          <img [src]="item.img" alt="{{ item.name }}" />
+        </div>
+        <p class="pt-4 py-0 m-0">{{ item.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

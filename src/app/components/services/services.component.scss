@@ -1,17 +1,19 @@
 @import "../../styles/variables.scss";
+
 .jumbotron {
   background-image: url(../../../assets/images/serviceBg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
-  height: 400px;
+  min-height: 400px; // Используйте min-height для лучшей адаптивности
   position: relative;
+  
   .overlay {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 5%,
@@ -19,16 +21,93 @@
       rgba(255, 255, 255, 0) 50%,
       rgba(0, 0, 0, 0.3) 100%
     );
+    
     .jumb-content {
       width: 100%;
-      height: 100% !important;
-      font-family: "Poppins", sans-serif !important;
+      height: 100%;
+      font-family: "Poppins", sans-serif;
       color: white;
+
       a {
         color: white;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+.content {
+  padding: 0 12vw; 
+}
+
+
+.title {
+  font-family: "Poppins", sans-serif;
+  
+  span {
+    font-size: 16px;
+    color: $title-color;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    color: #493979;
+    font-weight: 700;
+    line-height: 60px;
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+}
+
+.services-container {
+  display: flex;
+  justify-content: center; // Центрирует контейнер
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; // Пробел между элементами
+  justify-content: center; // Центрирует элементы в контейнере
+
+  .service_item {
+    text-align: center;
+    flex: 1 1 calc(20% - 10px); // 5 элементов в строке с учетом пробела
+
+    .border-line {
+      border: 0.5px solid rgba(90, 65, 163, 0.1);
+      border-radius: 8px;
+      height: 180px;
+    }
+
+    .service_img {
+      background-color: $main-color;
+      width: 80px;
+      height: 50px;
+      border-radius: 50%;
+
+      img {
+        width: 30px;
+        height: 30px;
       }
     }
   }
