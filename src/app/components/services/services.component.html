@@ -19,7 +19,7 @@
 
 <div class="services-container content pb-5">
   <div class="services">
-    <div class="service_item" *ngFor="let item of services; let i = index" [class.center-last]="isLastElement(i)">
+    <div class="service_item" *ngFor="let item of rows; let i = index" >
       <div class="border-line d-flex flex-column align-items-center py-4">
         <div class="service_img d-flex justify-content-center align-items-center">
           <img [src]="item.img" alt="{{ item.name }}" />
