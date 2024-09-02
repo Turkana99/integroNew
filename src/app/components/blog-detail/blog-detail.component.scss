@@ -75,8 +75,16 @@
       }
     }
   }
-  .content{
+  .content {
     padding: 0px 12vw;
+
+    @media only screen and (max-width: 1257px) {
+      padding: 0px 40px !important;
+    }
+
+    @media only screen and (max-width: 1180px) {
+      padding: 0px 20px !important;
+    }
   }
 
   .blog-container {
@@ -90,7 +98,7 @@
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.6;
       margin: 0;
     }

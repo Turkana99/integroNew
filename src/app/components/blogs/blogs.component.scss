@@ -39,8 +39,21 @@
 }
 
 .content {
-  padding: 0px 10vw;
+  padding: 0px 12vw;
+
+  @media only screen and (max-width: 1257px) {
+    padding: 0px 40px !important;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    padding: 0px 10px !important;
+  }
+
+  @media only screen and (max-width: 992px) {
+    padding: 0px 0px !important;
+  }
 }
+
 
 .blog {
   font-family: "Poppins", sans-serif !important;
@@ -70,6 +83,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  @media only screen and (max-width: 992px) {
+    padding: 10px 0px !important;
+  }
 }
 
 .blog_item .col-lg-4 {

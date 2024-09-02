@@ -57,20 +57,20 @@ export class ServicesComponent {
   ];
   rows: any = [];
   ngOnInit() {
-    this.splitServices(this.services, 5);
-    console.log(this.rows);
+    // this.splitServices(this.services, 5);
+    // console.log(this.rows);
   }
 
-  splitServices(servicesArray: any[], itemsPerRow: number) {
-    const totalRows = Math.ceil(servicesArray.length / itemsPerRow);
-    for (let i = 0; i < totalRows; i++) {
-      let row = servicesArray.slice(
-        i * itemsPerRow,
-        i * itemsPerRow + itemsPerRow
-      );
-      this.rows.push(row);
+  // splitServices(servicesArray: any[], itemsPerRow: number) {
+  //   const totalRows = Math.ceil(servicesArray.length / itemsPerRow);
+  //   for (let i = 0; i < totalRows; i++) {
+  //     let row = servicesArray.slice(
+  //       i * itemsPerRow,
+  //       i * itemsPerRow + itemsPerRow
+  //     );
+  //     this.rows.push(row);
 
-    }
-  }
+  //   }
+  // }
 
 }

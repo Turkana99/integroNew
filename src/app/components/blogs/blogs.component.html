@@ -19,9 +19,9 @@
     <span>Blog</span>
     <h1 class="pb-4">Our Blogs</h1>
   </div>
-  <div class="row m-0 blog_item">
-    <div class="col-lg-4 col-md-6 col-sm-12 pb-4" *ngFor="let blog of blogs">
-      <div class="blog-card">
+  <div class="row m-0 blog_item ">
+    <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogs">
+      <div class="blog-card px-2 py-2">
         <p-card [header]="blog.title" class="w-100 p-0 m-0">
           <ng-template pTemplate="header">
             <img alt="Card" [src]="blog.img" />

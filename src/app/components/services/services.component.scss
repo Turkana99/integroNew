@@ -39,8 +39,21 @@
 }
 
 .content {
-  padding: 0 12vw;
+  padding: 0px 12vw;
+
+  @media only screen and (max-width: 1257px) {
+    padding: 0px 40px !important;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    padding: 0px 10px !important;
+  }
+
+  @media only screen and (max-width: 992px) {
+    padding: 0px 0px !important;
+  }
 }
+
 
 .title {
   font-family: "Poppins", sans-serif;
@@ -77,50 +90,20 @@
   }
 }
 
-.services-container {
-  display: flex;
-  justify-content: center;
-}
-
-.services {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; // Gap between rows
-
-  .row {
-    display: flex;
-    gap: 10px; // Gap between items in a row
-    justify-content: center;
-    align-items: center;
-
-    .service_item {
-      text-align: center;
-      flex: 1 1 calc(20% - 10px); // Adjust percentage as needed
-      min-width: 150px; // Ensure minimum width for responsiveness
-
-      .border-line {
-        border: 0.5px solid rgba(90, 65, 163, 0.1);
-        border-radius: 8px;
-        height: 180px;
-      }
-
-      .service_img {
-        background-color: $main-color;
-        width: 80px;
-        height: 50px;
-        border-radius: 50%;
-
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-
-      &.centered {
-        flex: 1 1 100%; // Ensure it takes full width
-        display: flex;
-        justify-content: center;
-      }
+.service-wrapper {
+  .border-line {
+    border: 0.5px solid rgba(90, 65, 163, 0.1);
+    border-radius: 8px;
+    height: 180px;
+  }
+  .service_img {
+    background-color: $main-color !important;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50%;
+    img {
+      width: 30px !important;
+      height: 30px !important;
     }
   }
 }
