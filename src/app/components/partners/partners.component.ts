@@ -12,76 +12,76 @@ import { RouterModule } from '@angular/router';
 export class PartnersComponent {
   partners:any = [
     {
-      img: 'assets/images/GooglePay.svg',
+      img: 'assets/images/GooglePay.png',
     },
     {
-      img: 'assets/images/SamsungPay.svg',
+      img: 'assets/images/SamsungPay.png',
     },
     {
-      img: 'assets/images/Payoneer.svg',
+      img: 'assets/images/Payoneer.png',
     },
     {
-      img: 'assets/images/OpenSea.svg',
+      img: 'assets/images/OpenSea.png',
     },
     {
-      img: 'assets/images/mastercard.svg',
+      img: 'assets/images/mastercard.png',
     },
     {
-      img: 'assets/images/Paypal.svg',
+      img: 'assets/images/Paypal.png',
     },
     {
-      img: 'assets/images/SamsungPay.svg',
+      img: 'assets/images/SamsungPay.png',
     },
     {
-      img: 'assets/images/Payoneer.svg',
+      img: 'assets/images/Payoneer.png',
     },
     {
-      img: 'assets/images/OpenSea.svg',
+      img: 'assets/images/OpenSea.png',
     },
     {
-      img: 'assets/images/mastercard.svg',
+      img: 'assets/images/mastercard.png',
     },
     {
-      img: 'assets/images/GooglePay.svg',
+      img: 'assets/images/GooglePay.png',
     },
     {
-      img: 'assets/images/SamsungPay.svg',
+      img: 'assets/images/SamsungPay.png',
     },
     {
-      img: 'assets/images/Stripe.svg',
+      img: 'assets/images/Stripe.png',
     },
     {
-      img: 'assets/images/OpenSea.svg',
+      img: 'assets/images/OpenSea.png',
     },
     {
-      img: 'assets/images/westernunion.svg',
+      img: 'assets/images/Visa.png',
     },
     {
-      img: 'assets/images/Paypal.svg',
+      img: 'assets/images/Paypal.png',
     },
     {
-      img: 'assets/images/SamsungPay.svg',
+      img: 'assets/images/SamsungPay.png',
     },
     {
-      img: 'assets/images/Stripe.svg',
+      img: 'assets/images/Stripe.png',
     },
     {
-      img: 'assets/images/OpenSea.svg',
+      img: 'assets/images/OpenSea.png',
     },
     {
-      img: 'assets/images/UnionPay.svg',
+      img: 'assets/images/UnionPay.png',
     },
     {
-      img: 'assets/images/GooglePay.svg',
+      img: 'assets/images/GooglePay.png',
     },
     {
-      img: 'assets/images/SamsungPay.svg',
+      img: 'assets/images/SamsungPay.png',
     },
     {
-      img: 'assets/images/westernunion.svg',
+      img: 'assets/images/Visa.png',
     },
     {
-      img: 'assets/images/Paypal.svg',
+      img: 'assets/images/Paypal.png',
     },
   ];
 }

@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 .jumbotron {
-  background-image: url('/assets/images/evaluateBg.svg');
+  background-image: url('/assets/images/evaluateBg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -14,8 +14,8 @@
     left: 0px;
     background: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 1) 5%,
-      rgba(255, 255, 255, 0.4) 25%,
+      rgba(255, 255, 255, 1) 3%,
+      rgba(255, 255, 255, 0.3) 25%,
       rgba(255, 255, 255, 0) 50%,
       rgba(0, 0, 0, 0.3) 100%
     );
@@ -32,4 +32,121 @@
       }
     }
   }
+}
+
+
+
+
+.title {
+  font-family: "Poppins", sans-serif;
+
+  span {
+    font-size: 16px;
+    color: $title-color;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 12px;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    color: #493979;
+    font-weight: 700;
+    line-height: 60px;
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+ p {
+    font-size: 14px;
+    font-weight: 400;
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+}
+
+
+.content {
+  padding: 0px 12vw;
+
+  @media only screen and (max-width: 1257px) {
+    padding: 0px 40px !important;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    padding: 0px 10px !important;
+  }
+
+  @media only screen and (max-width: 992px) {
+    padding: 0px 0px !important;
+  }
+}
+
+.evaluate{
+  ::ng-deep .p-button {
+    padding: 15px 55px;
+    border: none;
+    background-color: $main-color;
+    color: white;
+    font-size: 12px;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif !important;
+  }
+  .custom-inp-file {
+    position: relative;
+  }
+
+  .custom-inp-file input {
+    padding-left: 110px;
+    padding-top: 13px;
+    height: 46px;
+    border-radius: 6px;
+    font-size: 14px; /* Şrift ölçüsünü təyin edin */
+    font-family: "Helvetica", sans-serif !important;
+  }
+
+  .custom-inp-file label {
+    position: absolute;
+    height: 46px;
+    background: #eeeeee;
+    color: #555555;
+    border: 1px solid #c6cfdd;
+    font-weight: bold;
+    font-size: 14px; /* Şrift ölçüsünü təyin edin */
+    font-family: "Helvetica", sans-serif !important;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 30px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .custom-inp-file input::file-selector-button {
+    display: none;
+  }
+
 }

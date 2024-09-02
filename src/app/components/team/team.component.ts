@@ -12,32 +12,32 @@ import { RouterModule } from '@angular/router';
 export class TeamComponent {
 team = [
   {
-    img: 'assets/images/team1.svg',
+    img: 'assets/images/team1.png',
     name:'Thomas Daniyel',
     position: 'Civil Attorney'
   },
   {
-    img: 'assets/images/team2.svg',
+    img: 'assets/images/team2.png',
     name:'Nikolona Gail',
     position: 'Senior Attorney'
   },
   {
-    img: 'assets/images/team3.svg',
+    img: 'assets/images/team3.png',
     name:'Michal David',
     position: 'Criminal Attorney'
   },
   {
-    img: 'assets/images/team1.svg',
+    img: 'assets/images/team1.png',
     name:'Thomas Daniyel',
     position: 'Civil Attorney'
   },
   {
-    img: 'assets/images/team2.svg',
+    img: 'assets/images/team2.png',
     name:'Nikolona Gail',
     position: 'Senior Attorney'
   },
   {
-    img: 'assets/images/team3.svg',
+    img: 'assets/images/team3.png',
     name:'Michal David',
     position: 'Criminal Attorney'
   },

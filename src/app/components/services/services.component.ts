@@ -11,47 +11,47 @@ import { Component } from '@angular/core';
 export class ServicesComponent {
   services = [
     {
-      img: 'assets/images/service1.svg',
+      img: 'assets/images/service1.png',
       name: 'Banking/Finance',
     },
     {
-      img: 'assets/images/service2.svg',
+      img: 'assets/images/service2.png',
       name: 'Medical Malpractise',
     },
     {
-      img: 'assets/images/service3.svg',
+      img: 'assets/images/service3.png',
       name: 'Contract Law',
     },
     {
-      img: 'assets/images/service4.svg',
+      img: 'assets/images/service4.png',
       name: 'Employment',
     },
     {
-      img: 'assets/images/service5.svg',
+      img: 'assets/images/service5.png',
       name: 'Litigation',
     },
     {
-      img: 'assets/images/service6.svg',
+      img: 'assets/images/service6.png',
       name: 'Intellectual Property',
     },
     {
-      img: 'assets/images/service7.svg',
+      img: 'assets/images/service7.png',
       name: 'Construction',
     },
     {
-      img: 'assets/images/service8.svg',
+      img: 'assets/images/service8.png',
       name: 'Business',
     },
     {
-      img: 'assets/images/service9.svg',
+      img: 'assets/images/service9.png',
       name: 'Bankruptcy',
     },
     {
-      img: 'assets/images/service10.svg',
+      img: 'assets/images/service10.png',
       name: 'Alternative Dispute resolution',
     },
     {
-      img: 'assets/images/service11.svg',
+      img: 'assets/images/service11.png',
       name: 'Immigration',
     },
   ];

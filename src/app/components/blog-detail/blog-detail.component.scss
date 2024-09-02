@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .jumbotron {
-  background-image: url('/assets/images/blogDetBg.svg');
+  background-image: url('/assets/images/blogDetBg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -17,7 +17,7 @@
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 5%,
-      rgba(255, 255, 255, 0.4) 25%,
+      rgba(255, 255, 255, 0.3) 25%,
       rgba(255, 255, 255, 0) 50%,
       rgba(0, 0, 0, 0.3) 100%
     );
