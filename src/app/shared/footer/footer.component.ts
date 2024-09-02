@@ -5,12 +5,11 @@ import { DividerModule } from 'primeng/divider';
   standalone: true,
   imports: [DividerModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
-export class FooterComponent implements OnInit{
+export class FooterComponent implements OnInit {
   currentYear: number | undefined;
   ngOnInit(): void {
     this.currentYear = new Date().getFullYear();
   }
-
 }
