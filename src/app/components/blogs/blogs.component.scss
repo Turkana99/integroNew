@@ -57,110 +57,123 @@
 
 .blog {
   font-family: "Poppins", sans-serif !important;
-}
 
-.blog span {
-  font-size: 16px;
-  color: $title-color;
-  font-weight: bold;
-}
-
-.blog h1 {
-  font-size: 60px;
-  color: #493979;
-  font-weight: 700;
-  line-height: 60px;
-}
-
-.blog_item {
-  padding: 35px 50px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.blog-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  @media only screen and (max-width: 992px) {
-    padding: 10px 0px !important;
-  }
-}
-
-.blog_item .col-lg-4 {
-  height: 100%; /* Устанавливаем одинаковую высоту для всех блоков */
-  display: flex;
-}
-
-::ng-deep .p-card {
-  flex-grow: 1; /* Заполняем весь блок по высоте */
-  display: flex;
-  flex-direction: column;
-}
-
-::ng-deep .p-card-content {
-  flex-grow: 1;
-  padding: 0px !important;
-  color: black;
-  font-size: 14px;
-  line-height: 30px;
-}
-
-img {
-  width: 100%;
-  height: 250px; /* Устанавливаем фиксированную высоту изображения */
-  object-fit: cover; /* Чтобы изображение не искажалось */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-::ng-deep .p-button {
-  background-color: transparent;
-  border: none;
-  color: #493979;
-  padding: 0px;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .blog h1 {
-    font-size: 48px;
-    line-height: 50px;
+  span {
+    font-size: 16px;
+    color: $title-color;
+    font-weight: bold;
   }
 
-  .blog span {
+  h1 {
+    font-size: 60px;
+    color: #493979;
+    font-weight: 700;
+    line-height: 60px;
+  }
+
+  .blog_item {
+    padding: 35px 50px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform 0.3s ease-in-out; 
+    &:hover {
+      transition: box-shadow 300ms;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    @media only screen and (max-width: 992px) {
+      padding: 10px 0px !important;
+    }
+  }
+
+  .blog_item .col-lg-4 {
+    height: 100%; 
+    display: flex;
+  }
+
+  ::ng-deep .p-card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::ng-deep .p-card-content {
+    flex-grow: 1;
+    padding: 0px !important;
+    color: black;
     font-size: 14px;
+    line-height: 30px;
   }
 
-  .blog_item {
-    padding: 20px 15px;
-  }
-
-  .blog_item .col-lg-4 {
-    width: 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (max-width: 576px) {
-  .blog h1 {
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  .blog span {
-    font-size: 12px;
-  }
-
-  .blog_item {
-    padding: 15px;
-  }
-
-  .blog_item .col-lg-4 {
+  img {
     width: 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  ::ng-deep .p-button {
+    background-color: transparent;
+    border: none;
+    color: #493979;
+    padding: 0px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    .blog_item {
+      padding: 20px 15px;
+    }
+
+    .blog_item .col-lg-4 {
+      width: 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    .blog_item {
+      padding: 15px;
+    }
+
+    .blog_item .col-lg-4 {
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 }
+
+
+
+
+
+
+
+
