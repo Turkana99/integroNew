@@ -32,7 +32,7 @@
       }
       h1 {
         font-size: 60px;
-        color: #493979;
+        color: $main-color;
         font-weight: 700;
         line-height: 60px;
       }
@@ -41,14 +41,14 @@
         font-weight: 300;
       }
       ::ng-deep .p-button {
-        background-color: #493979;
+        background-color: $main-color;
         color: white;
         border: none;
         font-size: 14px;
         font-weight: 400 !important;
         &:hover {
           background-color: white;
-          color: #493979;
+          color: $main-color;
         }
       }
     }
