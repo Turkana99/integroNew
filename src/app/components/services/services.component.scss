@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .jumbotron {
-  background-image: url('/assets/images/serviceBg.png');
+  background-image: url("/assets/images/serviceBg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -54,7 +54,6 @@
   }
 }
 
-
 .title {
   font-family: "Poppins", sans-serif;
 
@@ -95,15 +94,30 @@
     border: 0.5px solid rgba(90, 65, 163, 0.1);
     border-radius: 8px;
     height: 180px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      border: 1px solid rgba(90, 65, 163, 0.7);
+    }
   }
+
   .service_img {
     background-color: $main-color !important;
     width: 80px !important;
     height: 80px !important;
     border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+
     img {
       width: 30px !important;
       height: 30px !important;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.5);
+      }
     }
   }
 }
