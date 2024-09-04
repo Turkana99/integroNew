@@ -34,9 +34,6 @@
   }
 }
 
-
-
-
 .title {
   font-family: "Poppins", sans-serif;
 
@@ -70,22 +67,7 @@
       line-height: 40px;
     }
   }
-
- p {
-    font-size: 14px;
-    font-weight: 400;
-    @media (max-width: 768px) {
-      font-size: 48px;
-      line-height: 50px;
-    }
-
-    @media (max-width: 576px) {
-      font-size: 36px;
-      line-height: 40px;
-    }
-  }
 }
-
 
 .content {
   padding: 0px 12vw;
@@ -103,15 +85,38 @@
   }
 }
 
-.evaluate{
-  ::ng-deep .p-button {
-    padding: 15px 55px;
-    border: none;
+.evaluate {
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+  .free_btn {
     background-color: $main-color;
     color: white;
-    font-size: 12px;
-    border-radius: 10px;
-    font-family: "Poppins", sans-serif !important;
+    border: none;
+    font-size: 14px;
+    font-weight: 400 !important;
+    border-radius: 5px;
+    padding: 12px 30px;
+    &:hover {
+      background-color: white;
+      border: 1px solid $main-color;
+      color: $main-color;
+      font-weight: bold !important;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      transition: background-color 600ms, color 600ms, box-shadow 600ms,
+        font-weight 600ms;
+    }
   }
   .custom-inp-file {
     position: relative;
@@ -148,5 +153,4 @@
   .custom-inp-file input::file-selector-button {
     display: none;
   }
-
 }

@@ -8,10 +8,14 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-evaluation',
   standalone: true,
-  imports: [CommonModule,RouterModule,InputTextModule,InputTextareaModule,ButtonModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    InputTextModule,
+    InputTextareaModule,
+    ButtonModule,
+  ],
   templateUrl: './evaluation.component.html',
-  styleUrl: './evaluation.component.scss'
+  styleUrl: './evaluation.component.scss',
 })
-export class EvaluationComponent {
-
-}
+export class EvaluationComponent {}
