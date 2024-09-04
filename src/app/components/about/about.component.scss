@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 .jumbotron {
-  background-image: url('/assets/images/aboutJumbBg.png');
+  background-image: url(/assets/images/aboutJumbBg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -153,7 +153,7 @@
 
   .about-images {
     flex: 1;
-    min-width: 300px; /* Adjusted to match the content width */
+    min-width: 300px;
 
     .image-grid {
       display: grid;
@@ -163,10 +163,10 @@
       .image-item {
         overflow: hidden;
         border-radius: 5px;
-        height: 250px; /* Fixed height for rectangular aspect ratio */
+        height: 250px; 
         position: relative;
-        transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
-        transition: box-shadow 0.3s ease-in-out; /* Add transition for shadow effect */
+        transition: transform 0.3s ease-in-out;
+        transition: box-shadow 0.3s ease-in-out; 
         img {
           width: 100%;
           height: 100%;
@@ -175,11 +175,11 @@
           border-radius: 5px;
         }
       }
-      /* Specific hover effect for the last image */
+  
       .image-item {
         &:hover {
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
-          transform: scale(1.05); /* Slight scale for last image */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+          transform: scale(1.05); 
           transition: transform 300ms;
         }
 
