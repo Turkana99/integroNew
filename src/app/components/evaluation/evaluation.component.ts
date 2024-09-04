@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-evaluation',
   standalone: true,
-  imports: [CommonModule,InputTextModule,InputTextareaModule,ButtonModule],
+  imports: [CommonModule,RouterModule,InputTextModule,InputTextareaModule,ButtonModule],
   templateUrl: './evaluation.component.html',
   styleUrl: './evaluation.component.scss'
 })
