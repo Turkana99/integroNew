@@ -15,14 +15,19 @@
 
 <!--Partners-->
 <div class="partners content pt-4 pb-5">
-  <div class="d-flex flex-column align-items-center">
+  <div class="d-flex flex-column align-items-center pt-5 pb-4">
     <span>Partner</span>
-    <h1 class="pb-4">Our Partners</h1>
+    <h1>Our Partners</h1>
   </div>
   <div class="d-flex justify-content-center m-0 px-0">
     <div class="row m-0 p-0 part_item">
-      <div class="col-lg-2 col-md-4 col-sm-12" *ngFor="let partner of partners">
-        <img [src]="partner.img" />
+      <div
+        class="partners_items col-lg-2 col-md-4 col-sm-12 d-flex align-items-center justify-content-center"
+        *ngFor="let partner of partners"
+      >
+        <div class="d-flex border_line p-3">
+          <img [src]="partner.img" />
+        </div>
       </div>
     </div>
   </div>

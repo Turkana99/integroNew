@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .jumbotron {
-  background-image: url(/assets/images/partnerBg.png);
+  background-image: url(../../../assets/images/partnerBg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -61,7 +61,6 @@
   }
 }
 
-
 .partners {
   font-family: "Poppins", sans-serif !important;
 
@@ -111,8 +110,19 @@
       padding: 15px 15px;
     }
 
-    .col-lg-2 {
-      margin-bottom: 20px;
+    .partners_items {
+      .border_line {
+        margin-bottom: 20px;
+        border: 0.5px solid rgba(90, 65, 163, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+          border: 1px solid rgba(90, 65, 163, 0.3);
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+      }
 
       @media (max-width: 768px) {
         width: 33.33%;
@@ -135,13 +145,12 @@
       img {
         width: 100%;
         height: auto;
-        transition: transform 0.3s ease-in-out; 
+        transition: transform 0.3s ease-in-out;
 
         &:hover {
-          transform: scale(1.1); 
+          transform: scale(1.1);
         }
       }
     }
   }
 }
-

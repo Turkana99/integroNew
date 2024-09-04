@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 .jumbotron {
-  background-image: url(/assets/images/contactBg.png);
+  background-image: url(../../../assets/images/contactBg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -49,7 +49,6 @@
     padding: 0px 0px !important;
   }
 }
-
 
 .contact {
   font-family: "Poppins", sans-serif !important;
@@ -130,18 +129,23 @@
       }
     }
   }
-  ::ng-deep .p-button {
-    padding: 15px 55px;
-    border: none;
+
+  .free_btn {
     background-color: $main-color;
     color: white;
-    font-size: 12px;
-    border-radius: 10px;
-    font-family: "Poppins", sans-serif !important;
+    border: none;
+    font-size: 14px;
+    font-weight: 400 !important;
+    border-radius: 5px;
+    padding: 12px 30px;
     &:hover {
       background-color: white;
-      color:$main-color;
-      border: 1px solid ;
+      border: 1px solid $main-color;
+      color: $main-color;
+      font-weight: bold !important;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      transition: background-color 600ms, color 600ms, box-shadow 600ms,
+        font-weight 600ms;
     }
   }
   ::ng-deep .p-inputtext {
@@ -152,7 +156,7 @@
     font-family: "Poppins", sans-serif !important;
     font-weight: 500;
   }
-  .brd_line{
-    border-right: 1px solid rgba(0,0,0,0.1);
+  .brd_line {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
