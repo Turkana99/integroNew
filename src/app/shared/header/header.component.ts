@@ -1,16 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { LanguageService } from '../../core/services/lang.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   whiteLogo = false;
+  selectedLanguage: string = 'Az';
+  constructor(private languageService: LanguageService, private router:Router) {}
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const element = document.querySelector('.header') as HTMLElement;
@@ -21,5 +24,15 @@ export class HeaderComponent {
       element.classList.remove('navbar-inverse');
       this.whiteLogo = false;
     }
+  }
+
+  ngOnInit(): void {
+    this.selectedLanguage = this.languageService.getLanguage(); // Initialize with saved language
+  }
+
+  changeLanguage(lang: string): void {
+    this.languageService.setLanguage(lang);
+    this.selectedLanguage = lang;
+    this.router.navigate(['/main']);
   }
 }

@@ -1,6 +1,6 @@
 <div class="w-100 content header d-flex justify-content-center pt-2 m-0">
   <nav class="w-100 navbar navbar-expand-lg">
-    <div class="container-fluid px- m-0">
+    <div class="container-fluid px-0 m-0">
       <div
         class="navbar-brand d-flex justify-content-start align-items-center gap-2"
       >
@@ -32,7 +32,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-      <i class="fa-solid fa-bars navbar-toggler-icon"></i>
+        <i class="fa-solid fa-bars navbar-toggler-icon"></i>
       </button>
       <div
         class="collapse navbar-collapse d-flex justify-content-end"
@@ -103,6 +103,7 @@
             >
           </li>
 
+          <!-- Language Dropdown -->
           <li class="nav-item dropdown px-2">
             <a
               class="nav-link dropdown-toggle"
@@ -112,17 +113,17 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Az
+              {{ selectedLanguage }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li>
-                <a class="dropdown-item">Az</a>
+                <a class="dropdown-item" (click)="changeLanguage('Az')">Az</a>
               </li>
               <li>
-                <a class="dropdown-item">En</a>
+                <a class="dropdown-item" (click)="changeLanguage('En')">En</a>
               </li>
               <li>
-                <a class="dropdown-item">Ru</a>
+                <a class="dropdown-item" (click)="changeLanguage('Ru')">Ru</a>
               </li>
             </ul>
           </li>
