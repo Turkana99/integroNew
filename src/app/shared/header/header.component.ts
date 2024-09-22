@@ -10,10 +10,13 @@ import { LanguageService } from '../../core/services/lang.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   whiteLogo = false;
   selectedLanguage: string = 'Az';
-  constructor(private languageService: LanguageService, private router:Router) {}
+  constructor(
+    private languageService: LanguageService,
+    private router: Router
+  ) {}
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const element = document.querySelector('.header') as HTMLElement;
@@ -27,12 +30,16 @@ export class HeaderComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.selectedLanguage = this.languageService.getLanguage(); // Initialize with saved language
+    this.selectedLanguage = this.languageService.getLanguage();
+  }
+
+  get Language() {
+    return this.languageService.getTranslate();
   }
 
   changeLanguage(lang: string): void {
     this.languageService.setLanguage(lang);
     this.selectedLanguage = lang;
-    this.router.navigate(['/main']);
+    location.reload();
   }
 }

@@ -38,8 +38,39 @@ $tl: 0.6s;
         transition: width 0.6s ease;
       }
 
-      &:hover::before {
+      &:hover:not(&.router-link-active, &.dropdown-toggle)::before {
         width: 100%;
+      }
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+
+    /* Remove hover effect from active links */
+    .router-link-active {
+      color: $main-color;
+      font-weight: bold;
+      border-bottom: 1px solid $main-color;
+
+      /* Remove hover effect */
+      &:hover {
+        color: $main-color;
+      }
+
+      &::before {
+        width: 100%;
+        background-color: $main-color;
+      }
+    }
+
+    .nav-item.dropdown .dropdown-menu .dropdown-item {
+      &::before {
+        content: none;
+      }
+
+      &:hover {
+        color: $main-color !important;
       }
     }
 
@@ -48,8 +79,10 @@ $tl: 0.6s;
       color: white;
     }
   }
+
   & .navbar-brand {
     font-family: "Poppins", sans-serif !important;
+
     .logo {
       position: relative;
       width: 65px;
@@ -59,12 +92,14 @@ $tl: 0.6s;
         height: 100%;
       }
     }
+
     h1 {
       color: $main-color;
       font-weight: bold;
       font-size: 20px;
       text-align: center;
     }
+
     p {
       color: $title-color;
       font-size: 8px;
@@ -138,19 +173,21 @@ $tl: 0.6s;
     margin-right: 6px !important;
   }
 }
+
 @media only screen and (max-width: 1060px) {
   .content {
     padding: 0px;
   }
+
   .header {
     padding: 0 !important;
     justify-content: start;
     overflow-y: auto !important;
+
     .navbar {
       width: 100%;
       overflow-y: auto !important;
       background-color: $main-color !important;
-      overflow-y: auto;
       .navbar-nav {
         display: block !important;
         width: 100%;
@@ -162,63 +199,77 @@ $tl: 0.6s;
         }
       }
     }
+
     .collapse {
       padding-top: 20px;
     }
+
     .navbar-toggler .custom-toggler {
       display: block !important;
     }
+
     .frs_logo {
       opacity: 0 !important;
     }
+
     .scd_logo {
       opacity: 1 !important;
     }
+
     .navbar-brand {
       h1 {
         color: white !important;
       }
+
       p {
         color: white !important;
       }
     }
+
     .navbar-expand-lg {
       flex-wrap: wrap;
       justify-content: space-between;
       padding: 10px;
     }
+
     .navbar-expand-lg .navbar-toggler {
       display: block;
     }
+
     .navbar-expand-lg .navbar-collapse {
       display: none !important;
       flex-basis: 100%;
       flex-grow: 1;
       align-items: center;
     }
+
     .navbar-expand-lg .navbar-collapse.collapse.show {
       display: flex !important;
     }
   }
 }
+
 @media only screen and (max-width: 992px) {
   .header {
     padding: 0 !important;
     justify-content: start;
     overflow-y: auto !important;
+
     .navbar {
       width: 100%;
       overflow-y: auto !important;
     }
+
     .collapse {
       padding-top: 20px;
     }
+
     .navbar-nav .nav-item a {
       color: black !important; /* Ensure good contrast on smaller screens */
     }
+
     .navbar {
       background-color: $main-color !important;
-      overflow-y: auto;
     }
   }
 }

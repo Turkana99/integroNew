@@ -14,7 +14,9 @@ import { HttpClientModule } from '@angular/common/http'; // Make sure this is im
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  homePageInfo: any[] = [];
+  pageSize=10;
+  pageIndex=0;
+  homePageInfo: any = [];
 
   constructor(private homeService: HomePagesService) {}
 
@@ -24,10 +26,10 @@ export class MainComponent implements OnInit {
 
   // Get all homePage info
   getHomePages() {
-    this.homeService.getHomePages({}).subscribe(
+    this.homeService.getHomePages().subscribe(
       (response) => {
         this.homePageInfo = response;
-        console.log('Type', this.homePageInfo);
+        console.log('HomePage', this.homePageInfo);
       },
       (error) => {
         console.error('Error fetching data:', error);
