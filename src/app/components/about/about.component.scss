@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 .jumbotron {
-  background-image: url(../../../assets/images/aboutJumbBg.png);
+  // background-image: url(../../../assets/images/aboutJumbBg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -36,56 +36,10 @@
 .content {
   padding: 0px 12vw;
 }
-// .about {
-//   .about_1 {
-//     // width: 480px;
-//     // height: 260px ;
-//     background-image: url(../../../assets/images/about1.svg);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
-//   .about_2 {
-//     // width: 135px;
-//     // height: 188px ;
-//     background-image: url(../../../assets/images/about2.svg);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
-//   .about_3 {
-//     // width: 199px ;
-//     // height: 259px ;
-//     background-image: url(../../../assets/images/about3.svg);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
-//   .about_4 {
-//     // width: 350px ;
-//     // height: 202px ;
-//     background-image: url(../../../assets/images/about4.svg);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
 
-//   .about_content {
-//     font-family: "Poppins", sans-serif !important;
-//     span {
-//       font-size: 16px;
-//       color: $title-color;
-//       font-weight: bold;
-//     }
-//     h1 {
-//       font-size: 60px;
-//       color: #493979;
-//       font-weight: 700;
-//       line-height: 60px;
-//     }
-//     p {
-//       line-height: 35px;
-//       font-size: 16px;
-//     }
-//   }
-// }
-
+video {
+  border-radius: 10px;
+}
 .content {
   padding: 0px 12vw;
 
@@ -97,7 +51,6 @@
     padding: 0px 10px !important;
   }
 }
-
 
 .about-container {
   font-family: "Poppins", sans-serif;
@@ -146,8 +99,8 @@
     }
 
     p {
-      line-height: 35px;
-      font-size: 16px;
+      line-height: 32px;
+      font-size: 14px;
     }
   }
 
@@ -163,10 +116,10 @@
       .image-item {
         overflow: hidden;
         border-radius: 5px;
-        height: 250px; 
+        height: 250px;
         position: relative;
         transition: transform 0.3s ease-in-out;
-        transition: box-shadow 0.3s ease-in-out; 
+        transition: box-shadow 0.3s ease-in-out;
         img {
           width: 100%;
           height: 100%;
@@ -175,11 +128,11 @@
           border-radius: 5px;
         }
       }
-  
+
       .image-item {
         &:hover {
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-          transform: scale(1.05); 
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+          transform: scale(1.05);
           transition: transform 300ms;
         }
 
@@ -191,9 +144,7 @@
   }
 }
 
-
-
-@media (max-width:998px) {
+@media (max-width: 998px) {
   .about-header h1 {
     font-size: 2.2rem;
   }
@@ -258,7 +209,3 @@
     min-height: 180px; /* Adjust height for very small screens */
   }
 }
-
-
-
-

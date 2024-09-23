@@ -1,15 +1,20 @@
 <!--Jumbotron-->
-<div class="jumbotron w-100 p-0 m-0">
+<div
+  class="jumbotron w-100 p-0 m-0"
+  [ngStyle]="{
+    'background-image': 'url(' + settingInfo.backgroundImageUrl + ')'
+  }"
+>
   <div class="overlay w-100 p-0 m-0">
     <div
       class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
     >
       <p class="sub_route">
-        <a routerLink="/main">Home </a>
+        <a routerLink="/main">{{ Language.homePage }} </a>
         <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/blog">Blogs</a>
+        <a routerLink="/blog">{{ Language.blog }}</a>
         <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/blog-detail">Blog detail</a>
+        <a routerLink="/blog-detail">{{ blogInfo.title }}</a>
       </p>
     </div>
   </div>
@@ -18,44 +23,28 @@
 <!-- Blog-detail -->
 <div class="blog-detail">
   <div class="title d-flex flex-column align-items-center pt-5 pb-2">
-    <span>Blog</span>
-    <h1>{{ title }}</h1>
+    <span>{{ settingInfo.subTitle }}</span>
+    <h1>{{ blogInfo.title }}</h1>
   </div>
   <div class="blog-container content pb-5">
-    <img src="assets/images/blog1.png" alt="Blog Image" />
-    <p>
-      How many times were you frustrated while looking out for a good collection
-      of programming/algorithm /interview questions? What did you expect and
-      what did you get? This portal has been created to provide well written,
-      well thought and well explained solutions for selected questions. An IIT
-      Roorkee alumnus and founder of GeeksforGeeks. He loves to solve
-      programming problems in most efficient ways. Apart from GeeksforGeeks, he
-      has worked with DE Shaw and Co. as a software developer and JIIT Noida as
-      an assistant professor. It is a good platform to learn programming. It is
-      an educational website. Prepare for the Recruitment drive of product based
-      companies like Microsoft, Amazon, Adobe etc with a free online placement
-      preparation course. How many times were you frustrated while looking out
-      for a good collection of programming/algorithm /interview questions? What
-      did you expect and what did you get? This portal has been created to
-      provide well written, well thought and well explained solutions for
-      selected questions. An IIT Roorkee alumnus and founder of GeeksforGeeks.
-      He loves to solve programming problems in most efficient ways. Apart from
-      GeeksforGeeks, he has worked with DE Shaw and Co. as a software developer
-      and JIIT Noida as an assistant professor. It is a good platform to learn
-      programming. It is an educational website. Prepare for the Recruitment
-      drive of product based companies like Microsoft, Amazon, Adobe etc with a
-      free online placement preparation course. How many times were you
-      frustrated while looking out for a good collection of
-      programming/algorithm /interview questions? What did you expect and what
-      did you get? This portal has been created to provide well written, well
-      thought and well explained solutions for selected questions. An IIT
-      Roorkee alumnus and founder of GeeksforGeeks. He loves to solve
-      programming problems in most efficient ways. Apart from GeeksforGeeks, he
-      has worked with DE Shaw and Co. as a software developer and JIIT Noida as
-      an assistant professor. It is a good platform to learn programming. It is
-      an educational website. Prepare for the Recruitment drive of product based
-      companies like Microsoft, Amazon, Adobe etc with a free online placement
-      preparation course.
-    </p>
+    <p-carousel
+      [value]="blogInfo.blogAttachments"
+      [numVisible]="1"
+      [numScroll]="1"
+      [circular]="false"
+    >
+      <ng-template let-img pTemplate="item">
+        <div class="border-1 surface-border border-round m-2 p-3">
+          <div class="mb-3">
+            <div class="relative mx-auto w-100">
+              <img [src]= 'img.attachmentUrl'  [alt]="img.title" class="w-full
+              border-round" />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+
+    <p [innerHTML]="blogInfo.description"></p>
   </div>
 </div>

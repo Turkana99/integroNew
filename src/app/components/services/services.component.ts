@@ -1,77 +1,62 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ServicesService } from '../../core/services/services.service';
+import { LanguageService } from '../../core/services/lang.service';
+import { HttpClientModule } from '@angular/common/http';
+import { catchError, forkJoin, of } from 'rxjs';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, HttpClientModule],
+  providers: [ServicesService],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss',
 })
-export class ServicesComponent {
-  services = [
-    {
-      img: 'assets/images/service1.png',
-      name: 'Banking/Finance',
-    },
-    {
-      img: 'assets/images/service2.png',
-      name: 'Medical Malpractise',
-    },
-    {
-      img: 'assets/images/service3.png',
-      name: 'Contract Law',
-    },
-    {
-      img: 'assets/images/service4.png',
-      name: 'Employment',
-    },
-    {
-      img: 'assets/images/service5.png',
-      name: 'Litigation',
-    },
-    {
-      img: 'assets/images/service6.png',
-      name: 'Intellectual Property',
-    },
-    {
-      img: 'assets/images/service7.png',
-      name: 'Construction',
-    },
-    {
-      img: 'assets/images/service8.png',
-      name: 'Business',
-    },
-    {
-      img: 'assets/images/service9.png',
-      name: 'Bankruptcy',
-    },
-    {
-      img: 'assets/images/service10.png',
-      name: 'Alternative Dispute resolution',
-    },
-    {
-      img: 'assets/images/service11.png',
-      name: 'Immigration',
-    },
-  ];
-  rows: any = [];
-  ngOnInit() {
-    // this.splitServices(this.services, 5);
-    // console.log(this.rows);
+export class ServicesComponent implements OnInit{
+  serviceInfo: any = [];
+  settingInfo: any = [];
+
+  constructor(private serviceService: ServicesService,private languageService:LanguageService) {}
+
+  ngOnInit(): void {
+    this.loadData();
+  }
+  get Language() {
+    return this.languageService.getTranslate();
   }
 
-  // splitServices(servicesArray: any[], itemsPerRow: number) {
-  //   const totalRows = Math.ceil(servicesArray.length / itemsPerRow);
-  //   for (let i = 0; i < totalRows; i++) {
-  //     let row = servicesArray.slice(
-  //       i * itemsPerRow,
-  //       i * itemsPerRow + itemsPerRow
-  //     );
-  //     this.rows.push(row);
-
-  //   }
-  // }
+  loadData() {
+    forkJoin({
+      serviceInfo: this.serviceService.getServices().pipe(
+        catchError((error) => {
+          console.error('Error fetching aboutInfo:', error);
+          return of({ items: [] }); // Возвращаем объект с пустым массивом
+        })
+      ),
+      settingInfo: this.serviceService.getPageSetting().pipe(
+        catchError((error) => {
+          console.error('Error fetching settingInfo:', error);
+          return of({ items: [] }); // Возвращаем объект с пустым массивом
+        })
+      ),
+    }).subscribe({
+      next: ({ serviceInfo, settingInfo }) => {
+        this.serviceInfo = serviceInfo.items;
+        this.settingInfo = settingInfo;
+        // console.log('Data loaded successfully', {
+        //   serviceInfo: this.serviceInfo,
+        //   settingInfo: this.settingInfo,
+        // });
+      },
+      error: (err) => {
+        console.error('Error in subscription:', err);
+      },
+      complete: () => {
+        console.log('Data loading process completed.');
+      },
+    });
+  }
 
 }

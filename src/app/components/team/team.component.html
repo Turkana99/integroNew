@@ -1,44 +1,56 @@
 <!--Jumbotron-->
-<div class="jumbotron w-100 p-0 m-0">
-    <div class="overlay w-100 p-0 m-0">
-      <div
-        class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
-      >
-        <p class="sub_route">
-          <a routerLink="/main">Home </a>
-          <i class="fa-solid fa-angle-right px-2"></i>
-          <a routerLink="/team">Team</a>
-        </p>
+<div
+  class="jumbotron w-100 p-0 m-0"
+  [ngStyle]="{
+    'background-image': 'url(' + settingInfo.backgroundImageUrl + ')'
+  }"
+>
+  <div class="overlay w-100 p-0 m-0">
+    <div
+      class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
+    >
+      <p class="sub_route">
+        <a routerLink="/main">{{ Language.homePage }} </a>
+        <i class="fa-solid fa-angle-right px-2"></i>
+        <a routerLink="/team">{{ Language.team }}</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!--Team-->
+<section class="creative-team-section team">
+  <div class="content">
+    <div class="creative-title--wrap pt-5 pb-4">
+      <p class="p-0 m-0">{{ settingInfo.subTitle }}</p>
+      <h1>{{ settingInfo.title }}</h1>
+    </div>
+    <div class="row">
+      <div class="creative-team--block" *ngFor="let item of teamInfo">
+        <div class="inner-box">
+          <div class="image-box">
+            <figure class="image">
+              <img [src]="item.coverImageUrl" alt="" />
+            </figure>
+            <div class="info-box">
+              <h4 class="name">{{ item.fullName }}</h4>
+              <span class="designation">{{ item.position }}</span
+              ><span class="share-icon fa fa-share-alt"></span>
+              <div class="social-links">
+                <a [href]="item.linkedinUrl" target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a [href]="item.instagramUrl" target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a [href]="item.facebookUrl" target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!--Team-->
-  <section class="creative-team-section team">
-    <div class="content">
-        <div class="creative-title--wrap pt-5 pb-4">
-          <p class="p-0 m-0">Team</p>
-          <h1>Our Team</h1>
-        </div>
-        <div class="row">
-            <div class="creative-team--block" *ngFor="let item of team">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image">
-                              <img [src]="item.img" alt="" />
-                        </figure>
-                        <div class="info-box">
-                            <h4 class="name">{{item.name}}</h4>
-                            <span class="designation">{{item.position}}</span><span class="share-icon fa fa-share-alt"></span>
-                            <div class="social-links">
-                                <a href="https://www.fiverr.com/aliali44"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.fiverr.com/aliali44"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.fiverr.com/aliali44"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
+</section>

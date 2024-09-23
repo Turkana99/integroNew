@@ -12,7 +12,7 @@ import { LanguageService } from '../../core/services/lang.service';
 })
 export class HeaderComponent implements OnInit {
   whiteLogo = false;
-  selectedLanguage: string = 'Az';
+  selectedLanguage: string = 'az';
   constructor(
     private languageService: LanguageService,
     private router: Router
@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
 
   get Language() {
     return this.languageService.getTranslate();
+  }
+
+  get currentLanguage() {
+    return this.languageService.getLanguage();
   }
 
   changeLanguage(lang: string): void {

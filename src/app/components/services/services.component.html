@@ -1,13 +1,18 @@
 <!--Jumbotron-->
-<div class="jumbotron w-100 p-0 m-0">
+<div
+  class="jumbotron w-100 p-0 m-0"
+  [ngStyle]="{
+    'background-image': 'url(' + settingInfo.backgroundImageUrl + ')'
+  }"
+>
   <div class="overlay w-100 p-0 m-0">
     <div
       class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
     >
       <p class="sub_route">
-        <a routerLink="/main">Home</a>
+        <a routerLink="/main">{{ Language.homePage }}</a>
         <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/service">Services</a>
+        <a routerLink="/service">{{ Language.service }}</a>
       </p>
     </div>
   </div>
@@ -15,8 +20,8 @@
 
 <!-- Services -->
 <div class="d-flex flex-column align-items-center title pt-5">
-  <span>Practice Areas</span>
-  <h1 class="pb-4">Our Services</h1>
+  <span>{{ settingInfo.subTitle }}</span>
+  <h1 class="pb-4">{{ settingInfo.title }}</h1>
 </div>
 
 <!-- <div class="services-container content pb-5">
@@ -38,15 +43,16 @@
 
 <div class="row service-wrapper d-flex justify-content-center content pb-5 m-0">
   <div
-    class="col-lg-3 col-md-6 col-sm-12 col-12  d-flex flex-column align-items-center justify-content-center px-2 py-2"
-    *ngFor="let item of services; let i = index"
+    class="col-lg-3 col-md-6 col-sm-12 col-12 d-flex flex-column align-items-center justify-content-center px-2 py-2"
+    *ngFor="let item of serviceInfo; let i = index"
   >
-  <div class="w-100 border-line d-flex flex-column align-items-center justify-content-center">
-    <div class="service_img d-flex justify-content-center align-items-center">
-      <img src="{{ item.img }}" />
+    <div
+      class="w-100 border-line d-flex flex-column align-items-center justify-content-center"
+    >
+      <div class="service_img d-flex justify-content-center align-items-center">
+        <img src="{{ item.img }}" />
+      </div>
+      <p class="pt-4 py-0 m-0">{{ item.name }}</p>
     </div>
-    <p class="pt-4 py-0 m-0">{{ item.name }}</p>
   </div>
-  </div>
-
 </div>

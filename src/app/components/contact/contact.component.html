@@ -1,13 +1,18 @@
 <!--Jumbotron-->
-<div class="jumbotron w-100 p-0 m-0">
+<div
+  class="jumbotron w-100 p-0 m-0"
+  [ngStyle]="{
+    'background-image': 'url(' + settingInfo.backgroundImageUrl + ')'
+  }"
+>
   <div class="overlay w-100 p-0 m-0">
     <div
       class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
     >
       <p class="sub_route">
-        <a routerLink="/main">Home </a>
+        <a routerLink="/main">{{ Language.homePage }} </a>
         <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/contact">Contact</a>
+        <a routerLink="/contact">{{ Language.contact }}</a>
       </p>
     </div>
   </div>
@@ -16,21 +21,23 @@
 <!--Contact-->
 <div class="contact row content m-0">
   <div class="d-flex flex-column align-items-center py-5">
-    <span>Contact</span>
-    <h1>Contact Us</h1>
+    <span>{{ settingInfo.subTitle }}</span>
+    <h1>{{ settingInfo.title }}</h1>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+    <p><i class="fa-solid fa-phone pe-2"></i>{{ contactInfo.address }}</p>
     <p>
-      <i class="fa-solid fa-phone pe-2"></i>203 Fake St. Mountain View, San
-      Francisco, California, USA
+      <i class="fa-solid fa-envelope pe-2"></i> {{ contactInfo.phoneNumber }}
     </p>
-    <p><i class="fa-solid fa-envelope pe-2"></i> +99450 6883448</p>
-    <p><i class="fa-solid fa-location-dot pe-2"></i> www.integrolaw.az</p>
+    <p>
+      <i class="fa-solid fa-location-dot pe-2"></i>
+      {{ contactInfo.emailAddress }}
+    </p>
 
     <ul class="d-flex justify-content-start nav-item p-0 m-0">
       <li>
         <a
-          [href]=""
+          [href]="contactInfo.facebookUrl"
           target="_blank"
           class="nav-link py-3 ps-0 pe-2 m-0"
           aria-current="page"
@@ -45,7 +52,7 @@
       </li>
       <li>
         <a
-          [href]=""
+          [href]="contactInfo.twitterUrl"
           target="_blank"
           class="nav-link py-3 pe-2"
           title=""
@@ -58,9 +65,9 @@
           </div>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
-          [href]=""
+          [href]="contactInfo"
           target="_blank"
           class="nav-link py-3 pe-2"
           title=""
@@ -72,10 +79,10 @@
             <img src="assets/images/linkedinBlck.png" alt="" />
           </div>
         </a>
-      </li>
+      </li> -->
       <li>
         <a
-          [href]=""
+          [href]="contactInfo.instagramUrl"
           target="_blank"
           class="nav-link py-3 pe-2"
           title=""
@@ -126,9 +133,7 @@
         formControlName="content"
       ></textarea>
       <div class="d-flex justify-content-start pb-5">
-        <button class="free_btn">
-          Send
-        </button>
+        <button class="free_btn">Send</button>
       </div>
     </form>
   </div>

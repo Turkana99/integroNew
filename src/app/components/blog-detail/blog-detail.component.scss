@@ -1,7 +1,6 @@
 @import "../../styles/variables.scss";
 
 .jumbotron {
-  background-image: url(../../../assets/images/blogDetBg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
@@ -37,13 +36,14 @@
     }
   }
 }
+::ng-deep .p-carousel-indicators {
+  display: none;
+}
 
 .blog-detail {
   .title {
     font-family: "Poppins", sans-serif;
     text-align: center;
-    margin-bottom: 2rem;
-
     span {
       font-size: 16px;
       color: $title-color;
@@ -90,11 +90,8 @@
   .blog-container {
     overflow: hidden;
     img {
-      float: left;
-      max-width: 500px;
-      max-height: 400px;
-      margin-right: 15px;
-      border-radius: 8px;
+      width: 100%;
+      height: 500px;
     }
 
     p {

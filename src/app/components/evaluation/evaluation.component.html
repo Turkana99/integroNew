@@ -1,30 +1,35 @@
 <!--Jumbotron-->
-<div class="jumbotron w-100 p-0 m-0">
+<div
+  class="jumbotron w-100 p-0 m-0"
+  [ngStyle]="{
+    'background-image': 'url(' + settingInfo.backgroundImageUrl + ')'
+  }"
+>
   <div class="overlay w-100 p-0 m-0">
     <div
       class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
     >
       <p class="sub_route">
-        <a routerLink="/main">Home </a>
+        <a routerLink="/main">{{ Language.homePage }} </a>
         <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/evaluation">Free case evaluation</a>
+        <a routerLink="/evaluation">{{ Language.case }}</a>
       </p>
     </div>
   </div>
 </div>
 
 <!--Evaluation-->
-<div class="d-flex flex-column align-items-center title pt-5">
-  <span>Evaluate</span>
-  <h1>Free case evaluation</h1>
+<div class="d-flex flex-column align-items-center title pt-5 pb-4">
+  <span>{{ settingInfo.subTitle }}</span>
+  <h1>{{ settingInfo.title }}</h1>
 </div>
 
 <div class="evaluate content d-flex flex-column gap-3">
-  <p>
+  <!-- <p>
     If your concern is not listed here, and you wish to be heard, give us a call
     or drop an email on the Contact page. In addition, if you believe you have a
     case, you can submit it for a free evaluation
-  </p>
+  </p> -->
   <textarea rows="9" cols="30" pInputTextarea placeholder="Message"></textarea>
   <div class="form-group custom-inp-file">
     <label for="uploadfile">Yüklə</label>

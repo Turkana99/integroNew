@@ -1,13 +1,18 @@
 <!-- Jumbotron -->
-<div class="jumbotron w-100 p-0 m-0">
+<div
+  class="jumbotron w-100 p-0 m-0"
+  [ngStyle]="{
+    'background-image': 'url(' + settingInfo.backgroundImageUrl + ')'
+  }"
+>
   <div class="overlay w-100 p-0 m-0">
     <div
       class="w-100 jumb-content d-flex flex-column justify-content-end align-items-center"
     >
       <p class="sub_route">
-        <a routerLink="/main">Home </a>
+        <a routerLink="/main">{{ Language.homePage }} </a>
         <i class="fa-solid fa-angle-right px-2"></i>
-        <a routerLink="/blog">Blogs</a>
+        <a routerLink="/blog">{{ Language.blog }}</a>
       </p>
     </div>
   </div>
@@ -16,22 +21,25 @@
 <!-- Blog -->
 <div class="blog content pb-5">
   <div class="d-flex flex-column align-items-center pt-5">
-    <span>Blog</span>
-    <h1>Our Blogs</h1>
+    <span>{{ settingInfo.subTitle }}</span>
+    <h1>{{ settingInfo.title }}</h1>
   </div>
-  <div class="row m-0 blog_item ">
-    <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogs">
+  <div class="row m-0 blog_item">
+    <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogInfo">
       <div class="blog-card mx-2 my-2">
         <p-card [header]="blog.title" class="w-100 p-0 m-0">
           <ng-template pTemplate="header">
-            <img alt="Card" [src]="blog.img" />
+            <img alt="Card" [src]="blog.coverImageUrl" />
           </ng-template>
-          <p class="p-0">
-            {{blog.description}}
-          </p>
+          <p class="p-0" [innerHTML]="blog.description"></p>
           <ng-template pTemplate="footer">
             <div class="flex mt-1">
-              <p-button severity="secondary" class="w-full" styleClass="w-full" [routerLink]="['/blog-detail', blog.title]">
+              <p-button
+                severity="secondary"
+                class="w-full"
+                styleClass="w-full"
+                [routerLink]="['/blog-detail', blog.id]"
+              >
                 Read More <i class="fa-solid fa-right-long ps-2"></i>
               </p-button>
             </div>

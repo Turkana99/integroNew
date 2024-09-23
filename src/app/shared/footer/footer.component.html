@@ -11,38 +11,34 @@
             <p class="p-0 m-0">ATTORNEYS & cONSULTANTS</p>
           </div>
         </div>
-        <p class="text py-2">
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts. Lorem Ipsum is
-          simply dummy text of the printing and typesetting industry.
+        <p class="text py-2" [innerHTML]="homeInfo.text">
         </p>
         <div class="social-icons"></div>
       </div>
     </div>
     <div class="col-lg-4 p-0 m-0">
       <ul class="p-0 m-0 work_hoor">
-        <li class="title">Business Hours</li>
-        <li class="sub_title">Opening Days:</li>
-        <li>Monday - Friday: 09:00 to 20:00</li>
-        <li>Saturday: 09:00 to 17:00</li>
-        <li class="sub_title">Vacations:</li>
-        <li>All sunday days all official holidays</li>
+        <li class="title">{{ Language.workHours }}</li>
+        <li class="sub_title">{{ Language.openDay }}</li>
+        <li>{{ Language.workDay1 }}</li>
+        <li>{{ Language.workDay2 }}</li>
+        <li class="sub_title">{{ Language.vacation }}:</li>
+        <li>{{ Language.vacDay }}</li>
       </ul>
     </div>
     <div class="col-lg-4 p-0 m-0">
       <ul class="p-0 m-0 contact_info">
-        <li class="title">Have a questions?</li>
+        <li class="title">{{ Language.question }}</li>
         <li>
-          <i class="fa-solid fa-location-dot pe-2"></i> 203 Fake St. Mountain
-          View, San Francisco, California, USA
+          <i class="fa-solid fa-location-dot pe-2"></i> {{contactInfo.address}}
         </li>
-        <li><i class="fa-solid fa-phone pe-2"></i> +99450 6883448</li>
-        <li><i class="fa-solid fa-envelope pe-2"></i>www.integro.az</li>
+        <li><i class="fa-solid fa-phone pe-2"></i>{{contactInfo.phoneNumber}}</li>
+        <li><i class="fa-solid fa-envelope pe-2"></i>{{contactInfo.emailAddress}}</li>
       </ul>
     </div>
   </div>
 
   <div class="w-100 m-0 py-3 copyright">
-    © {{ currentYear }} Copyright All rights reserved Integro
+    © {{ currentYear }} {{Language.copyright}}
   </div>
 </div>
