@@ -30,17 +30,51 @@
     or drop an email on the Contact page. In addition, if you believe you have a
     case, you can submit it for a free evaluation
   </p> -->
-  <textarea rows="9" cols="30" pInputTextarea placeholder="Message"></textarea>
-  <div class="form-group custom-inp-file">
-    <label for="uploadfile">Yüklə</label>
-    <input
-      type="file"
-      accept="image/svg+xml, image/png"
-      class="form-control"
-      id="uploadfile"
-    />
-  </div>
-  <div class="d-flex justify-content-end pb-5">
-    <button class="free_btn">Send</button>
-  </div>
+  <form [formGroup]="evaluateForm">
+    <textarea
+      rows="9"
+      cols="30"
+      pInputTextarea
+      placeholder="Message"
+      formControlName="message"
+      class="w-100"
+    ></textarea>
+    <!--Required message-->
+    <div
+      class="validationMessage d-flex justify-content-start"
+      *ngIf="
+        evaluateForm.get('message')?.invalid &&
+        evaluateForm.get('message')?.touched
+      "
+    >
+      <p class="pb-2 m-0">{{ Language.reqMessage }}</p>
+    </div>
+    <div class="form-group custom-inp-file">
+      <label for="uploadfile">Yüklə</label>
+      <input
+        type="file"
+        accept="image/svg+xml, image/png"
+        class="form-control"
+        id="uploadfile"
+        (change)="onFileSelected($event)"
+        formControlName="caseEvaluationAttachments"
+      />
+    </div>
+    <!--Required message-->
+    <div
+      class="validationMessage d-flex justify-content-start"
+      *ngIf="
+        evaluateForm.get('caseEvaluationAttachments')?.invalid &&
+        evaluateForm.get('caseEvaluationAttachments')?.touched
+      "
+    >
+      <p class="pb-2 m-0">{{ Language.reqMessage }}</p>
+    </div>
+    <div class="d-flex justify-content-end pb-5 pt-4">
+      <button class="free_btn" (click)="submitEvaluation()">Send</button>
+    </div>
+  </form>
 </div>
+<!--Toasts-->
+<p-toast></p-toast>
+<!--/Toasts-->

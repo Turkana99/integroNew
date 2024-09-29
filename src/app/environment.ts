@@ -13,4 +13,6 @@ export const environment = {
   getPageSettingsInfo: `${apiUrl}/PageSettings/GetByPageNameWithLang`,
   getPartnersInfo: `${apiUrl}/Partners`,
   getServicesInfo: `${apiUrl}/Services/GetListWithLang`,
+  getServiceInfoId: `${apiUrl}/Services/GetByIdWithLang`,
+  feedback: `${apiUrl}/FeedbackAndSuggestions`,
 };

@@ -19,4 +19,11 @@ export class ServicesService {
     const lang = this.langService.getLanguage(); // Get current language
     return this.http.get<any>(`${environment.getPageSettingsInfo}/${lang}/Services`);
   }
+
+  getServiceDetail(id:any): Observable<any> {
+    const lang = this.langService.getLanguage(); // Get current language
+    return this.http.get<any>(
+      `${environment.getServiceInfoId}/${id}/${lang}`
+    );
+  }
 }

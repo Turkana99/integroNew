@@ -97,43 +97,95 @@
       </li>
     </ul>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column gap-3">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column">
     <form
       [formGroup]="feedbackForm"
-      class="d-flex flex-column border_line gap-3"
+      class="d-flex flex-column border_line gap-2"
     >
       <input
         type="text"
         pInputText
-        placeholder="Name*"
+        [placeholder]="Language.nameHolder"
         class="w-100"
         formControlName="fullName"
       />
-      <div class="d-flex gap-2">
-        <input
-          type="text"
-          pInputText
-          placeholder="Email"
-          class="flex-fill"
-          formControlName="emailAddress"
-        />
-        <input
-          type="text"
-          pInputText
-          placeholder="Phone number"
-          class="flex-fill"
-          formControlName="phoneNumber"
-        />
+      <!--Required message-->
+      <div
+        class="validationMessage"
+        *ngIf="
+          feedbackForm.get('fullName')?.invalid &&
+          feedbackForm.get('fullName')?.touched
+        "
+      >
+        <p class="p-0 m-0">{{ Language.reqMessage }}</p>
+      </div>
+      <!--/Required message-->
+      <div class="d-flex flex-column gap-2">
+        <div class="d-flex flex-column flex-fill">
+          <input
+            type="text"
+            pInputText
+            formControlName="emailAddress"
+            class="flex-fill"
+            [placeholder]="Language.emailHolder"
+          />
+          <!--Required message-->
+          <div
+            class="validationMessage"
+            *ngIf="
+              feedbackForm.get('emailAddress')?.errors?.required &&
+              feedbackForm.get('emailAddress')?.touched
+            "
+          >
+            <p class="p-0 m-0">{{ Language.reqMessage }}</p>
+          </div>
+          <div
+            class="validationMessage"
+            *ngIf="feedbackForm.get('emailAddress')?.errors?.email"
+          >
+            <p class="p-0 m-0">{{ Language.formatMessage }}</p>
+          </div>
+          <!--/Required message-->
+        </div>
+        <div class="d-flex flex-column flex-fill">
+          <input
+            type="text"
+            pInputText
+            formControlName="phoneNumber"
+            class="flex-fill"
+            [placeholder]="Language.numberHolder"
+          />
+          <!--Required message-->
+          <div
+            class="validationMessage"
+            *ngIf="
+              feedbackForm.get('phoneNumber')?.invalid &&
+              feedbackForm.get('phoneNumber')?.touched
+            "
+          >
+            <p class="p-0 m-0">{{ Language.reqMessage }}</p>
+          </div>
+        </div>
       </div>
       <textarea
         rows="5"
         cols="30"
         pInputTextarea
-        placeholder="Message"
         formControlName="content"
+        [placeholder]="Language.messageHolder"
       ></textarea>
+      <!--Required message-->
+      <div
+        class="validationMessage"
+        *ngIf="
+          feedbackForm.get('content')?.invalid &&
+          feedbackForm.get('content')?.touched
+        "
+      >
+        <p class="p-0 m-0">{{ Language.reqMessage }}</p>
+      </div>
       <div class="d-flex justify-content-start pb-5">
-        <button class="free_btn">Send</button>
+        <button class="free_btn" (click)="sendFeedback()">Send</button>
       </div>
     </form>
   </div>
@@ -150,5 +202,5 @@
   ></iframe>
 </div>
 <!--Toasts-->
-<!-- <p-toast></p-toast> -->
+<p-toast></p-toast>
 <!--/Toasts-->

@@ -1,0 +1,117 @@
+@import "../../styles/variables.scss";
+
+.jumbotron {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 53%;
+  height: 400px;
+  position: relative;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 5%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+
+    .jumb-content {
+      width: 100%;
+      height: 100% !important;
+      font-family: "Poppins", sans-serif !important;
+      color: white;
+
+      a {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+::ng-deep .p-carousel-indicators {
+  display: none;
+}
+
+.service-detail {
+  .title {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    span {
+      font-size: 16px;
+      color: $title-color;
+      font-weight: bold;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+
+    h1 {
+      font-size: 60px;
+      color: $main-color;
+      font-weight: 700;
+      line-height: 60px;
+
+      @media (max-width: 768px) {
+        font-size: 48px;
+        line-height: 50px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+  }
+  .content {
+    padding: 0px 12vw;
+
+    @media only screen and (max-width: 1257px) {
+      padding: 0px 40px !important;
+    }
+
+    @media only screen and (max-width: 1180px) {
+      padding: 0px 20px !important;
+    }
+  }
+
+  .blog-container {
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 500px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+.icon {
+  width: max-content;
+  background-color: $main-color;
+}
+@media (max-width: 768px) {
+  .blog-container {
+    img {
+      float: none;
+      display: block;
+      width: 100%;
+      margin: 0 auto 10px;
+    }
+  }
+}

@@ -13,7 +13,7 @@ import { LanguageService } from '../../core/services/lang.service';
   imports: [CommonModule, HttpClientModule],
   providers: [AboutService],
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'], // Исправлено с `styleUrl` на `styleUrls`
+  styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
   aboutInfo: any = [];
@@ -33,13 +33,13 @@ export class AboutComponent implements OnInit {
       aboutInfo: this.aboutService.getAboutInfo().pipe(
         catchError((error) => {
           console.error('Error fetching aboutInfo:', error);
-          return of({ items: [] }); // Возвращаем объект с пустым массивом
+          return of({ items: [] });
         })
       ),
       settingInfo: this.aboutService.getPageSetting().pipe(
         catchError((error) => {
           console.error('Error fetching settingInfo:', error);
-          return of({ items: [] }); // Возвращаем объект с пустым массивом
+          return of({ items: [] });
         })
       ),
     }).subscribe({

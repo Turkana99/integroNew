@@ -17,6 +17,12 @@ export class EvaluationService {
 
   getPageSetting(): Observable<any> {
     const lang = this.langService.getLanguage(); // Get current language
-    return this.http.get<any>(`${environment.getPageSettingsInfo}/${lang}/FreeCaseEvaluation`);
+    return this.http.get<any>(
+      `${environment.getPageSettingsInfo}/${lang}/FreeCaseEvaluation`
+    );
+  }
+  // Add feedback func.
+  addEvaluation(request: any): Observable<any> {
+    return this.http.post<any>(environment.caseEvaluation, request);
   }
 }
