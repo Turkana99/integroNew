@@ -9,7 +9,7 @@ import { catchError, forkJoin, of } from 'rxjs';
 @Component({
   selector: 'app-team',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule,RouterModule],
   providers: [TeamService],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',

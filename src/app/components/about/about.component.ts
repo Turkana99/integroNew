@@ -10,7 +10,7 @@ import { LanguageService } from '../../core/services/lang.service';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   providers: [AboutService],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],

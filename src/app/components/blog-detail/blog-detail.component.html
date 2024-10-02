@@ -1,4 +1,4 @@
-<!--Jumbotron-->
+<!-- Jumbotron -->
 <div
   class="jumbotron w-100 p-0 m-0"
   [ngStyle]="{
@@ -21,30 +21,47 @@
 </div>
 
 <!-- Blog-detail -->
-<div class="blog-detail">
-  <div class="title d-flex flex-column align-items-center pt-5 pb-2">
+<div class="blog-detail px-5">
+  <div class="title d-flex flex-column align-items-center pt-5 pb-2 px-5">
     <span>{{ settingInfo.subTitle }}</span>
     <h1>{{ blogInfo.title }}</h1>
   </div>
+
   <div class="blog-container content pb-5">
-    <p-carousel
-      [value]="blogInfo.blogAttachments"
-      [numVisible]="1"
-      [numScroll]="1"
-      [circular]="false"
-    >
-      <ng-template let-img pTemplate="item">
-        <div class="border-1 surface-border border-round m-2 p-3">
-          <div class="mb-3">
-            <div class="relative mx-auto w-100">
-              <img [src]= 'img.attachmentUrl'  [alt]="img.title" class="w-full
-              border-round" />
+    <!-- If there is only one attachment -->
+    <ng-container *ngIf="blogInfo.blogAttachments.length === 1">
+      <img
+        [src]="blogInfo.blogAttachments[0].attachmentUrl"
+        alt="Blog image"
+        class="w-full border-round"
+      />
+    </ng-container>
+
+    <!-- If there are multiple attachments, use carousel -->
+    <ng-container *ngIf="blogInfo.blogAttachments.length > 1">
+      <p-carousel
+        [value]="blogInfo.blogAttachments"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="false"
+      >
+        <ng-template let-img pTemplate="item">
+          <div class="border-1 surface-border border-round m-2 p-3">
+            <div class="mb-3">
+              <div class="relative mx-auto w-100">
+                <img
+                  [src]="img.attachmentUrl"
+                  [alt]="img.title"
+                  class="w-full border-round"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </ng-template>
-    </p-carousel>
+        </ng-template>
+      </p-carousel>
+    </ng-container>
 
+    <!-- Blog description -->
     <p [innerHTML]="blogInfo.description"></p>
   </div>
 </div>

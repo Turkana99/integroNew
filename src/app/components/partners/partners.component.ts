@@ -9,7 +9,7 @@ import { catchError, forkJoin, of } from 'rxjs';
 @Component({
   selector: 'app-partners',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   providers: [PartnerService],
   templateUrl: './partners.component.html',
   styleUrl: './partners.component.scss',
