@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { ServiceDetailComponent } from './components/service-detail/service-detail.component';
+import { WorkerDetailComponent } from './components/dialogs/worker-detail/worker-detail.component';
 
 export const routes: Routes = [
   {
@@ -55,5 +56,9 @@ export const routes: Routes = [
   {
     path: 'evaluation',
     component: EvaluationComponent,
+  },
+  {
+    path: 'worker-detail',
+    component: WorkerDetailComponent,
   },
 ];

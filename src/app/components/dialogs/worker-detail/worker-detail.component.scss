@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.workerDetail {
+  font-family: "Poppins", sans-serif !important;
+
+  span {
+    font-size: 16px;
+    color: $title-color;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 60px;
+    color: $main-color;
+    font-weight: 700;
+    line-height: 60px;
+  }
+  h1,
+  span {
+    text-align: center;
+  }
+  p {
+    font-size: 14px;
+  }
+  .close-icon {
+    font-size: 26px;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    color: $main-color;
+  }
+}

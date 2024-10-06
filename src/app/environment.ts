@@ -10,6 +10,7 @@ export const environment = {
   caseEvaluation: `${apiUrl}/CaseEvaluations`,
   getContactPageInfo: `${apiUrl}/Contacts/GetActiveWithLang`,
   getEmployeesInfo: `${apiUrl}/Employees/GetListWithLang`,
+  getEmployeeId: `${apiUrl}/Employees`,
   getPageSettingsInfo: `${apiUrl}/PageSettings/GetByPageNameWithLang`,
   getPartnersInfo: `${apiUrl}/Partners`,
   getServicesInfo: `${apiUrl}/Services/GetListWithLang`,

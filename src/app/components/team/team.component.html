@@ -37,6 +37,9 @@
               <span class="designation">{{ item.position }}</span
               ><span class="share-icon fa fa-share-alt"></span>
               <div class="social-links">
+                <a (click)="openDialog(item.id)"target="_blank"
+                  ><i class="fa-solid fa-eye"></i
+                ></a>
                 <a [href]="item.linkedinUrl" target="_blank"
                   ><i class="fab fa-linkedin"></i
                 ></a>

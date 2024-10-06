@@ -5,11 +5,18 @@ import { RouterModule } from '@angular/router';
 import { TeamService } from '../../core/services/team.service';
 import { LanguageService } from '../../core/services/lang.service';
 import { catchError, forkJoin, of } from 'rxjs';
+import { WorkerDetailComponent } from '../dialogs/worker-detail/worker-detail.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-team',
   standalone: true,
-  imports: [CommonModule, HttpClientModule,RouterModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    MatDialogModule,
+  ],
   providers: [TeamService],
   templateUrl: './team.component.html',
   styleUrl: './team.component.scss',
@@ -20,6 +27,7 @@ export class TeamComponent {
 
   constructor(
     private teamService: TeamService,
+    public dialog: MatDialog,
     private languageService: LanguageService
   ) {}
 
@@ -60,5 +68,21 @@ export class TeamComponent {
         console.log('Data loading process completed.');
       },
     });
+  }
+
+  openDialog(id?: number) {
+    this.dialog
+      .open(WorkerDetailComponent, {
+        width: '800px!important',
+        autoFocus: false,
+        data: { memberId: id },
+        position: {
+          top: '50px',
+        },
+      })
+      .afterClosed()
+      .subscribe(() => {
+        this.loadData();
+      });
   }
 }

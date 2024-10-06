@@ -17,6 +17,13 @@ export class TeamService {
 
   getPageSetting(): Observable<any> {
     const lang = this.langService.getLanguage(); // Get current language
-    return this.http.get<any>(`${environment.getPageSettingsInfo}/${lang}/Team`);
+    return this.http.get<any>(
+      `${environment.getPageSettingsInfo}/${lang}/Team`
+    );
+  }
+  // Get  Member  with Id
+  getMemberWithId(id: number) {
+    const lang = this.langService.getLanguage();
+    return this.http.get<any>(`${environment.getEmployeeId}/${lang}/${id}`);
   }
 }

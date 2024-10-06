@@ -1,0 +1,15 @@
+<div class="workerDetail px-5 py-5">
+  <div class="d-flex justify-content-between align-items-start">
+    <div>
+      <h1 class="p-0 m-0">{{ workerInfo.fullName }}</h1>
+      <span>{{ workerInfo.position }}</span>
+    </div>
+    <div class="pt-3 close-icon">
+      <button mat-dialog-close>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <p class="pt-3" [innerHTML]="workerInfo.description"></p>
+</div>
