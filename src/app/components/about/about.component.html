@@ -20,7 +20,7 @@
 
 <div class="about-container content py-5">
   <section class="row about-content py-5">
-    <div class="col-lg-6 col-md-6 col-sm-12 about-images p-0 m-0 h-100">
+    <div class="col-lg-6 col-md-12 col-sm-12 about-images p-0 m-0 h-100">
       <video
         [src]="aboutInfo.attachmentUrl"
         class="p-0 m-0"
@@ -31,7 +31,7 @@
         disablePictureInPicture
       ></video>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 about-text">
+    <div class="col-lg-6 col-md-12 col-sm-12 about-text">
       <span>{{ settingInfo.subTitle }}</span>
       <h1 class="pb-2 m-0">{{ settingInfo.title }}</h1>
       <p [innerHTML]="aboutInfo.content"></p>

@@ -1,17 +1,18 @@
 @import "../../styles/variables.scss";
+
 .jumbotron {
-  // background-image: url(../../../assets/images/aboutJumbBg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 53%;
-  height: 400px;
+  background-position: center; // Center the background image
+  height: 400px; // Default height for larger screens
   position: relative;
+
   .overlay {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1) 5%,
@@ -19,40 +20,50 @@
       rgba(255, 255, 255, 0) 50%,
       rgba(0, 0, 0, 0.3) 100%
     );
+
     .jumb-content {
       width: 100%;
-      height: 100% !important;
+      height: 100%;
       font-family: "Poppins", sans-serif !important;
       color: white;
+      display: flex; // Added display flex for better alignment
+      flex-direction: column;
+      justify-content: center; // Center content vertically
+      align-items: center; // Center content horizontally
+      text-align: center;
+
       a {
         color: white;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
+        font-size: 16px; // Increased font size for better visibility
+
+        @media (max-width: 768px) {
+          font-size: 14px; // Adjust for smaller screens
+        }
       }
     }
   }
 }
-.content {
-  padding: 0px 12vw;
-}
-
-video {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
 
 .content {
   padding: 0px 12vw;
 
-  @media only screen and (max-width: 1257px) {
-    padding: 0px 40px !important;
+  @media (max-width: 1257px) {
+    padding: 0px 40px !important; // Adjust padding for medium screens
   }
 
-  @media only screen and (max-width: 1180px) {
-    padding: 0px 10px !important;
+  @media (max-width: 1180px) {
+    padding: 0px 20px !important; // Further adjust padding
+  }
+
+  @media (max-width: 1060px) {
+    padding: 0px 10px; // Reduce padding for smaller screens
+  }
+
+  @media (max-width: 768px) {
+    padding: 0px 5px; // Further reduce padding for very small screens
   }
 }
 
@@ -69,24 +80,53 @@ video {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #493979;
+
+    @media (max-width: 1000px) {
+      font-size: 2rem; // Reduced size for medium screens
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem; // Smaller font size for tablets
+    }
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem; // Smaller font size for mobile
+    }
+
+    @media (max-width: 316px) {
+      font-size: 1.3rem; // Very small screens
+    }
   }
 
   p {
     font-size: 1.2rem;
     color: #555;
+
+    @media (max-width: 1000px) {
+      font-size: 1rem; // Smaller font size for medium screens
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem; // Smaller font size for tablets
+    }
   }
 }
 
 .about-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2rem; // Gap between items
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 1000px) {
+    flex-direction: column; // Stack elements vertically
+    gap: 1rem; // Reduce gap when stacked
+  }
+
   .about-text {
     flex: 1;
-    min-width: 300px;
+    min-width: 300px; // Keep a minimum width for about text
     font-family: "Poppins", sans-serif !important;
 
     span {
@@ -100,11 +140,32 @@ video {
       color: $main-color;
       font-weight: 700;
       line-height: 60px;
+
+      @media (max-width: 1000px) {
+        font-size: 2.5rem; // Adjust heading size for medium screens
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2rem; // Adjust heading size for tablets
+      }
+
+      @media (max-width: 576px) {
+        font-size: 1.5rem; // Adjust heading size for mobile
+      }
     }
 
     p {
       line-height: 32px;
       font-size: 14px;
+
+      @media (max-width: 1000px) {
+        font-size: 12px; // Reduce font size for medium screens
+      }
+
+      @media (max-width: 576px) {
+        font-size: 10px; // Smaller font size for mobile
+        line-height: 20px; // Adjust line height for mobile
+      }
     }
   }
 
@@ -124,6 +185,7 @@ video {
         position: relative;
         transition: transform 0.3s ease-in-out;
         transition: box-shadow 0.3s ease-in-out;
+
         img {
           width: 100%;
           height: 100%;
@@ -131,85 +193,58 @@ video {
           transition: transform 0.3s ease-in-out;
           border-radius: 5px;
         }
-      }
 
-      .image-item {
         &:hover {
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
           transform: scale(1.05);
           transition: transform 300ms;
         }
+      }
 
-        img {
-          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
+      @media (max-width: 1000px) {
+        grid-template-columns: 1fr; // Single column layout for smaller screens
       }
     }
   }
 }
 
+video {
+  width: 100%;
+  height: auto; // Set height to auto for better responsiveness
+  border-radius: 10px;
+}
+
 @media (max-width: 998px) {
   .about-header h1 {
-    font-size: 2.2rem;
+    font-size: 2rem; // Adjust font size for smaller screens
   }
 
   .about-content .about-text h1 {
-    font-size: 3rem;
+    font-size: 2rem; // Adjust heading size
   }
 
   .about-content .about-text p {
-    font-size: 14px;
-    line-height: 30px;
+    font-size: 12px; // Reduce font size for smaller screens
+    line-height: 28px; // Adjust line height
   }
 
   .about-images .image-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; // Single column layout for smaller screens
   }
 }
 
 @media (max-width: 576px) {
-  .content {
-    padding: 0px 2rem;
+  .about-content {
+    flex-direction: column; // Stack about text and images vertically
   }
 
-  .about-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .about-content .about-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .about-content .about-text p {
-    font-size: 12px;
-    line-height: 25px;
+  .about-images .image-item {
+    min-height: 180px; // Adjust height for very small screens
   }
 }
 
 @media (max-width: 316px) {
-  .content {
-    padding: 0px 1rem; /* Reducing padding for very small screens */
-  }
-
-  .about-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .about-content .about-text h1 {
-    font-size: 2rem;
-  }
-
-  .about-content .about-text p {
-    font-size: 10px;
-    line-height: 20px;
-  }
-
   .about-images .image-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem; /* Adjust gap for smaller screens */
-  }
-
-  .about-images .image-item {
-    min-height: 180px; /* Adjust height for very small screens */
+    gap: 0.5rem; // Adjust gap for smaller screens
   }
 }

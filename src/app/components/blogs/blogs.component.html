@@ -24,19 +24,20 @@
     <span>{{ settingInfo.subTitle }}</span>
     <h1>{{ settingInfo.title }}</h1>
   </div>
-  <div class="row m-0 blog_item">
+  <div class="row m-0 p-0 blog_item">
     <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogInfo">
-      <div class="blog-card mx-2 my-2">
+      <div class="blog-card mx-2 my-1">
         <p-card [header]="blog.title" class="w-100 p-0 m-0">
           <ng-template pTemplate="header">
             <img alt="Card" [src]="blog.coverImageUrl" />
           </ng-template>
-          <p class="p-0" [innerHTML]="blog.shortDescription"></p>
+          <div class="line mt-3"></div>
+          <p class="px-0 pt-3" [innerHTML]="blog.shortDescription"></p>
           <ng-template pTemplate="footer">
-            <div class="flex mt-1">
+            <div class="flex mt-1 p-0">
               <p-button
                 severity="secondary"
-                class="w-full"
+                class="w-full p-0 m-0"
                 styleClass="w-full"
                 [routerLink]="['/blog-detail', blog.id]"
               >

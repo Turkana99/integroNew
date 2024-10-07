@@ -73,8 +73,10 @@ export class TeamComponent {
   openDialog(id?: number) {
     this.dialog
       .open(WorkerDetailComponent, {
-        width: '800px!important',
+        width: '800px',
+        minHeight: '500px',
         autoFocus: false,
+        hasBackdrop: true,
         data: { memberId: id },
         position: {
           top: '50px',

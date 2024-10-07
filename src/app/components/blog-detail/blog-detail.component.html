@@ -22,12 +22,12 @@
 
 <!-- Blog-detail -->
 <div class="blog-detail px-5">
-  <div class="title d-flex flex-column align-items-center pt-5 pb-2 px-5">
-    <span>{{ settingInfo.subTitle }}</span>
-    <h1>{{ blogInfo.title }}</h1>
+  <div class="title d-flex flex-column align-items-center pt-5  px-5">
+    <span class="px-5">{{ settingInfo.subTitle }}</span>
+    <h1 class="px-5">{{ blogInfo.title }}</h1>
   </div>
 
-  <div class="blog-container content pb-5">
+  <div class="blog-container content pt-0 pb-5">
     <!-- If there is only one attachment -->
     <ng-container *ngIf="blogInfo.blogAttachments.length === 1">
       <img
@@ -62,6 +62,6 @@
     </ng-container>
 
     <!-- Blog description -->
-    <p [innerHTML]="blogInfo.description"></p>
+    <p [innerHTML]="blogInfo.description" class="pb-5"></p>
   </div>
 </div>

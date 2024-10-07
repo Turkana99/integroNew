@@ -1,9 +1,10 @@
 @import "../../styles/variables.scss";
 .jumbotron {
+  // background-image: url(../../../assets/images/aboutJumbBg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
-  height: 400px;
+  height: 400px!important;
   position: relative;
   .overlay {
     width: 100%;
@@ -23,6 +24,7 @@
       height: 100% !important;
       font-family: "Poppins", sans-serif !important;
       color: white;
+      text-align: center;
       a {
         color: white;
         font-weight: bold;

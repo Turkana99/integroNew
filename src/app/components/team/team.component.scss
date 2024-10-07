@@ -23,6 +23,7 @@
       height: 100% !important;
       font-family: "Poppins", sans-serif !important;
       color: white;
+      text-align: center;
       a {
         color: white;
         font-weight: bold;
@@ -77,12 +78,14 @@ img {
     font-size: 16px;
     color: $title-color;
     font-weight: bold;
+    font-family: "Poppins", sans-serif !important;
   }
   h1 {
     font-size: 60px;
     color: $main-color;
     font-weight: 700;
     line-height: 60px;
+    font-family: "Poppins", sans-serif !important;
   }
 }
 .creative-title--wrap .creative-subtitle:before {
@@ -154,22 +157,25 @@ img {
   margin-bottom: 5px;
   margin-top: 0px;
   line-height: 1.416em;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.96px;
   color: #16243e;
+  font-family: "Poppins", sans-serif !important;
 }
 .inner-box .info-box .name a {
   color: #16243e;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif !important;
 }
 .inner-box .info-box .designation {
   position: relative;
   display: block;
   transition: all 0.4s ease;
   color: #67687a;
+  font-family: "Poppins", sans-serif !important;
 }
 .inner-box .info-box .share-icon {
   position: absolute;

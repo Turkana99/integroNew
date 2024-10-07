@@ -1,15 +1,36 @@
-<div class="workerDetail px-5 py-5">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <h1 class="p-0 m-0">{{ workerInfo.fullName }}</h1>
-      <span>{{ workerInfo.position }}</span>
+<!-- <div class="workerDetail px-5">
+  <div class="workerMain d-flex flex-column">
+    <div class="w-100 d-flex justify-content-between align-items-start workerTitle pt-5">
+      <div class="pe-5">
+        <h1 class="p-0 m-0">{{ workerInfo.fullName }}</h1>
+        <span>{{ workerInfo.position }}</span>
+      </div>
+      <div class="pt-3 close-icon">
+        <button mat-dialog-close>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
     </div>
-    <div class="pt-3 close-icon">
-      <button mat-dialog-close>
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
+    <div class="line mt-2"></div>
   </div>
 
-  <p class="pt-3" [innerHTML]="workerInfo.description"></p>
+  <div class="workerInfo">
+    <p class="pt-3" [innerHTML]="workerInfo.description"></p>
+  </div>
+</div> -->
+
+<div mat-dialog-title class="workerDetail py-0 my-0">
+  <div class="pb-2">
+    <h1 class="p-0 m-0">{{ workerInfo.fullName }}</h1>
+    <span>{{ workerInfo.position }}</span>
+  </div>
+
+  <div class="line"></div>
 </div>
+
+<mat-dialog-content class="mat-typography">
+  <p [innerHTML]="workerInfo.description" class="pt-2"></p>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="my-2">
+  <button mat-dialog-close>{{Language.close}}</button>
+</mat-dialog-actions>
