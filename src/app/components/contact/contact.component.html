@@ -20,11 +20,11 @@
 
 <!--Contact-->
 <div class="contact row content m-0">
-  <div class="d-flex flex-column align-items-center pt-5 pb-3">
-    <span>{{ settingInfo.subTitle }}</span>
-    <h1>{{ settingInfo.title }}</h1>
+  <div class="d-flex flex-column align-items-center pt-4 pb-3">
+    <span [@backInUp]>{{ settingInfo.subTitle }}</span>
+    <h1 class="p-0 m-0" [@backInUp]>{{ settingInfo.title }}</h1>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-12" [@backInLeft]>
     <p><i class="fa-solid fa-phone pe-2"></i>{{ contactInfo.address }}</p>
     <p>
       <i class="fa-solid fa-envelope pe-2"></i> {{ contactInfo.phoneNumber }}
@@ -97,7 +97,10 @@
       </li>
     </ul>
   </div>
-  <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column">
+  <div
+    class="col-lg-6 col-md-6 col-sm-12 col-12 d-flex flex-column"
+    [@backInRight]
+  >
     <form
       [formGroup]="feedbackForm"
       class="d-flex flex-column border_line gap-2"
@@ -184,15 +187,37 @@
       >
         <p class="p-0 m-0">{{ Language.reqMessage }}</p>
       </div>
-      <div class="d-flex justify-content-start pb-5">
-        <button class="free_btn" (click)="sendFeedback()">Send</button>
+      <div class="d-flex justify-content-end pb-5">
+        <!--Submit button-->
+        <button
+          mat-raised-button
+          type="submit"
+          disableRipple
+          disableFocusRipple
+          class="custom-button free_btn mt-2 py-2"
+          [disabled]="feedbackForm.invalid"
+          [ngClass]="{
+            'disabled-button': feedbackForm.invalid || buttonSpinner
+          }"
+          (click)="sendFeedback()"
+        >
+          <div class="d-flex justify-content-center">
+            <mat-spinner
+              [diameter]="20"
+              *ngIf="buttonSpinner"
+              class="custom-mat-spinner d-flex align-items-center"
+            ></mat-spinner>
+            <p *ngIf="!buttonSpinner">{{ Language.btnSubmit }}</p>
+          </div>
+        </button>
+        <!--/Submit button-->
       </div>
     </form>
   </div>
 </div>
 <div class="p-0 m-0">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97236.44637535338!2d49.77255925639497!3d40.39469399742881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2sBaku!5e0!3m2!1sen!2saz!4v1724612581349!5m2!1sen!2saz"
+    [src]="sanitizedMapUrl"
     width="100%"
     height="450"
     style="border: 0"

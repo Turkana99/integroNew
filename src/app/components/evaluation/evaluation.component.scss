@@ -81,7 +81,7 @@
   }
 
   @media only screen and (max-width: 992px) {
-    padding: 0px 0px !important;
+    padding: 0px 10px !important;
   }
 }
 
@@ -117,6 +117,23 @@
       transition: background-color 600ms, color 600ms, box-shadow 600ms,
         font-weight 600ms;
     }
+  }
+  ::ng-deep .mdc-button {
+    background-color: $main-color;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+  }
+  ::ng-deep .custom-button .mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: white;
+  }
+  ::ng-deep .mat-mdc-raised-button[disabled].mat-mdc-button-disabled,
+  .mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-disabled
+    .register
+    span {
+    color: white;
+    background-color: $main-color;
+    opacity: 0.5;
   }
   .custom-inp-file {
     position: relative;

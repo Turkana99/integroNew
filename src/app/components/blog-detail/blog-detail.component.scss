@@ -36,7 +36,7 @@
         font-size: 14px;
 
         @media (max-width: 768px) {
-          font-size: 12px;
+          font-size: 12px; // Smaller font size for mobile
         }
       }
     }
@@ -46,22 +46,33 @@
 ::ng-deep .p-carousel-indicators {
   display: none;
 }
+.content {
+  padding: 0px 12vw;
 
+  @media only screen and (max-width: 1257px) {
+    padding: 0px 40px !important;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    padding: 0px 20px !important;
+  }
+}
 .blog-detail {
   .title {
     font-family: "Poppins", sans-serif;
     text-align: center;
+
     span {
       font-size: 16px;
       color: $title-color;
       font-weight: bold;
 
       @media (max-width: 768px) {
-        font-size: 14px;
+        font-size: 14px; // Smaller font size for mobile
       }
 
       @media (max-width: 576px) {
-        font-size: 12px;
+        font-size: 12px; // Further adjust for extra small screens
       }
     }
 
@@ -73,35 +84,14 @@
       font-family: "Poppins", sans-serif !important;
 
       @media (max-width: 768px) {
-        font-size: 24px;  // Adjust font size for smaller screens
+        font-size: 24px; // Adjust font size for smaller screens
         line-height: 32px; // Adjust line height for smaller screens
       }
 
       @media (max-width: 576px) {
-        font-size: 20px;  // Further adjust font size for extra small screens
+        font-size: 20px; // Further adjust font size for extra small screens
         line-height: 28px; // Further adjust line height for extra small screens
       }
-    }
-  }
-
-  .content {
-    padding: 0px 12vw;
-    font-family: "Poppins", sans-serif !important;
-
-    @media only screen and (max-width: 1257px) {
-      padding: 0px 40px !important;
-    }
-
-    @media only screen and (max-width: 1180px) {
-      padding: 0px 20px !important;
-    }
-
-    @media (max-width: 768px) {
-      padding: 0 15px; // Adjust padding for smaller screens
-    }
-
-    @media (max-width: 576px) {
-      padding: 0 10px; // Further adjust padding for extra small screens
     }
   }
 
@@ -113,6 +103,10 @@
       height: auto; // Change to auto for responsive height
       max-height: 400px; // Set a max height for images
       object-fit: cover;
+
+      @media (max-width: 768px) {
+        max-height: 300px; // Reduce max height for smaller screens
+      }
     }
 
     p {

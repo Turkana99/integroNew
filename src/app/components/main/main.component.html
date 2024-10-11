@@ -2,12 +2,12 @@
 <div class="jumbotron">
   <div class="overlay">
     <div class="jumb-content d-flex flex-column justify-content-center">
-      <p class="sub_title">{{ homePageInfo.subTitle }}</p>
-      <h1>{{ homePageInfo.title }}</h1>
-      <p class="content py-4" [innerHTML]="homePageInfo.text">
+      <p class="sub_title" [@backInUp]>{{ homePageInfo.subTitle }}</p>
+      <h1 [@backInUp]>{{ homePageInfo.title }}</h1>
+      <p class="content py-4" [@backInUp] [innerHTML]="homePageInfo.text">
       </p>
       <div>
-        <button routerLink="/evaluation" class="free_btn py-3 px-5">
+        <button routerLink="/evaluation" class="free_btn py-3 px-5" [@backInUp]>
           {{Language.homeBtn}}
         </button>
       </div>

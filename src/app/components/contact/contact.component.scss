@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 53%;
-  height: 400px!important;
+  height: 400px !important;
   position: relative;
   .overlay {
     width: 100%;
@@ -132,22 +132,41 @@
   }
 
   .free_btn {
-    background-color: $main-color;
-    color: white;
+    color: white !important;
     border: none;
     font-size: 14px;
     font-weight: 400 !important;
     border-radius: 5px;
     padding: 12px 30px;
     &:hover {
-      background-color: white;
-      border: 1px solid $main-color;
-      color: $main-color;
+      background-color: white!important;
+      border: 1px solid $main-color!important;
+      color: $main-color!important;
       font-weight: bold !important;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       transition: background-color 600ms, color 600ms, box-shadow 600ms,
         font-weight 600ms;
     }
+    p {
+      padding-top: 12px;
+    }
+  }
+  ::ng-deep .mdc-button {
+    background-color: $main-color;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+  }
+  ::ng-deep .custom-button .mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: white;
+  }
+  ::ng-deep .mat-mdc-raised-button[disabled].mat-mdc-button-disabled,
+  .mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-disabled
+    .register
+    p {
+    color: white !important;
+    background-color: $main-color;
+    opacity: 0.5;
   }
   ::ng-deep .p-inputtext {
     width: 100% !important;

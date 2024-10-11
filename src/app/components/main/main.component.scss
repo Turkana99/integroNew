@@ -3,7 +3,7 @@
 .jumbotron {
   background-image: url(../../../assets/images/jumbBg.png);
   background-repeat: no-repeat;
-  background-size: cover!important;
+  background-size: cover !important;
   background-position: 50% 53%;
   position: relative;
   height: 100vh;
@@ -50,13 +50,18 @@
         &:hover {
           background-color: white;
           color: $main-color;
-          font-weight: bold!important;
+          font-weight: bold !important;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          transition: background-color 600ms, color 600ms, box-shadow 600ms, font-weight 600ms;
+          transition: background-color 600ms, color 600ms, box-shadow 600ms,
+            font-weight 600ms;
         }
       }
     }
   }
+}
+
+.animated {
+  animation-duration: 100s; 
 }
 
 @media only screen and (max-width: 1060px) {

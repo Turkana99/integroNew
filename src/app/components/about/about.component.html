@@ -22,6 +22,7 @@
   <section class="row about-content py-5">
     <div class="col-lg-6 col-md-12 col-sm-12 about-images p-0 m-0 h-100">
       <video
+      [@backInLeft] *ngIf="aboutInfo"
         [src]="aboutInfo.attachmentUrl"
         class="p-0 m-0"
         width="100%"
@@ -32,9 +33,9 @@
       ></video>
     </div>
     <div class="col-lg-6 col-md-12 col-sm-12 about-text">
-      <span>{{ settingInfo.subTitle }}</span>
-      <h1 class="pb-2 m-0">{{ settingInfo.title }}</h1>
-      <p [innerHTML]="aboutInfo.content"></p>
+      <p class="sub_title" [@backInRight]>{{ settingInfo.subTitle }}</p>
+      <h1 class="pb-2 m-0" [@backInRight]>{{ settingInfo.title }}</h1>
+      <p [innerHTML]="aboutInfo.content" [@backInRight]></p>
     </div>
   </section>
 </div>

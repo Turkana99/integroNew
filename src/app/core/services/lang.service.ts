@@ -34,6 +34,9 @@ export class LanguageService implements OnInit {
       reqMessage: 'Bu xana boş ola bilməz',
       formatMessage: 'Düzgün format deyil',
       close: 'Bağla',
+      more:'Daha ətraflı',
+      btnSubmit:'Göndər',
+      fileSizeErrorMessage:'Qoyulan ölçünü keçmisiniz.'
     },
     en: {
       homePage: 'Home Page',
@@ -63,6 +66,9 @@ export class LanguageService implements OnInit {
       reqMessage: "This field can't be empty",
       formatMessage: 'Not the correct format',
       close: 'Close',
+      more:'Read more',
+      btnSubmit:'Send',
+      fileSizeErrorMessage:'You have exceeded the set size.'
     },
     ru: {
       homePage: 'Главная страница',
@@ -92,6 +98,9 @@ export class LanguageService implements OnInit {
       reqMessage: 'Это поле не может быть пустым',
       formatMessage: 'Неверный формат',
       close: 'Закрывать',
+      more:'Подробнее',
+      btnSubmit:'Отправлять',
+      fileSizeErrorMessage:'Вы превысили установленный размер.'
     },
   };
   constructor() {

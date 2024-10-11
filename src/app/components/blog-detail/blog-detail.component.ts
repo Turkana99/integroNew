@@ -6,14 +6,56 @@ import { BlogService } from '../../core/services/blog.service';
 import { catchError, forkJoin, of } from 'rxjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'primeng/carousel';
+import {
+  animate,
+  keyframes,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-blog-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule,CarouselModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, CarouselModule],
   providers: [BlogService],
   templateUrl: './blog-detail.component.html',
   styleUrl: './blog-detail.component.scss',
+  animations: [
+    trigger('bounceInUp', [
+      // Adding bounceInUp animation
+      transition('void => *', [
+        animate(
+          '1.7s ease-out',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(30px)', offset: 0 }), // Start slightly below
+            style({
+              opacity: 0.5,
+              transform: 'translateY(-15px)',
+              offset: 0.6,
+            }), // Bounce up slightly
+            style({ opacity: 1, transform: 'translateY(0)', offset: 1 }), // Final position
+          ])
+        ),
+      ]),
+    ]),
+    trigger('backInUp', [
+      transition('void => *', [
+        animate(
+          '1.5s ease-out',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(200%)', offset: 0 }),
+            style({
+              opacity: 0.7,
+              transform: 'translateY(-20px)',
+              offset: 0.7,
+            }),
+            style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+          ])
+        ),
+      ]),
+    ]),
+  ],
 })
 export class BlogDetailComponent implements OnInit {
   blogId: any;

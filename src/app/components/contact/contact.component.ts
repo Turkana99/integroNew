@@ -13,7 +13,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LanguageService } from '../../core/services/lang.service';
 import { catchError, forkJoin, of } from 'rxjs';
 import { FeedbackService } from '../../core/services/feedback.service';
-
+import {
+  animate,
+  keyframes,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { MaterialModule } from '../../material.module';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -28,22 +36,72 @@ import { FeedbackService } from '../../core/services/feedback.service';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    MaterialModule,
   ],
   providers: [ContactService, FeedbackService, MessageService],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
+  animations: [
+    trigger('backInRight', [
+      transition('void => *', [
+        animate(
+          '1.5s ease-out',
+          keyframes([
+            style({ opacity: 0, transform: 'translateX(100%)', offset: 0 }), // Start off-screen (right)
+            style({
+              opacity: 0.7,
+              transform: 'translateX(-20px)',
+              offset: 0.7,
+            }), // Move slightly backward
+            style({ opacity: 1, transform: 'translateX(0)', offset: 1 }), // Final position in view
+          ])
+        ),
+      ]),
+    ]),
+    trigger('backInLeft', [
+      transition('void => *', [
+        animate(
+          '1.5s ease-out',
+          keyframes([
+            style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+            style({ opacity: 0.7, transform: 'translateX(20px)', offset: 0.7 }), 
+            style({ opacity: 1, transform: 'translateX(0)', offset: 1 }), 
+          ])
+        ),
+      ]),
+    ]),
+    trigger('backInUp', [
+      transition('void => *', [
+        animate(
+          '1.5s ease-out',
+          keyframes([
+            style({ opacity: 0, transform: 'translateY(200%)', offset: 0 }),
+            style({
+              opacity: 0.7,
+              transform: 'translateY(-20px)',
+              offset: 0.7,
+            }),
+            style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
+          ])
+        ),
+      ]),
+    ]),
+  ],
 })
 export class ContactComponent implements OnInit {
   contactInfo: any = [];
   settingInfo: any = [];
   feedbackForm: any;
+  buttonSpinner = false;
+  sanitizedMapUrl: SafeResourceUrl | undefined;
 
   constructor(
     private contactService: ContactService,
     private feedbackService: FeedbackService,
     private messageService: MessageService,
     private languageService: LanguageService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private sanitizer: DomSanitizer
   ) {}
   ngOnInit(): void {
     this.initForm();
@@ -79,10 +137,11 @@ export class ContactComponent implements OnInit {
       next: ({ contactInfo, settingInfo }) => {
         this.contactInfo = contactInfo;
         this.settingInfo = settingInfo;
-        // console.log('Data loaded successfully', {
-        //   contactInfo: this.contactInfo,
-        //   settingInfo: this.settingInfo,
-        // });
+        console.log('Data loaded successfully', {
+          contactInfo: this.contactInfo,
+          settingInfo: this.settingInfo,
+        });
+        this.sanitizedMapUrl = this.sanitizeUrl(this.contactInfo.googleMapUrl);
       },
       error: (err) => {
         console.error('Error in subscription:', err);
@@ -91,6 +150,9 @@ export class ContactComponent implements OnInit {
         console.log('Data loading process completed.');
       },
     });
+  }
+  sanitizeUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   // Change func.

@@ -1,4 +1,4 @@
-<!--Jumbotron-->
+<!-- Jumbotron -->
 <div
   class="jumbotron w-100 p-0 m-0"
   [ngStyle]="{
@@ -18,18 +18,13 @@
   </div>
 </div>
 
-<!--Evaluation-->
-<div class="d-flex flex-column align-items-center title pt-5 pb-4">
-  <span>{{ settingInfo.subTitle }}</span>
-  <h1>{{ settingInfo.title }}</h1>
+<!-- Evaluation -->
+<div class="d-flex flex-column align-items-center title pt-4 pb-4">
+  <span [@backInUp]>{{ settingInfo.subTitle }}</span>
+  <h1 class="p-0 m-0" [@backInUp]>{{ settingInfo.title }}</h1>
 </div>
 
-<div class="evaluate content d-flex flex-column gap-3">
-  <!-- <p>
-    If your concern is not listed here, and you wish to be heard, give us a call
-    or drop an email on the Contact page. In addition, if you believe you have a
-    case, you can submit it for a free evaluation
-  </p> -->
+<div class="evaluate content d-flex flex-column gap-3" [@bounceInUp]>
   <form [formGroup]="evaluateForm">
     <textarea
       rows="9"
@@ -39,7 +34,7 @@
       formControlName="message"
       class="w-100"
     ></textarea>
-    <!--Required message-->
+    <!-- Required message -->
     <div
       class="validationMessage d-flex justify-content-start"
       *ngIf="
@@ -49,20 +44,23 @@
     >
       <p class="pb-2 m-0">{{ Language.reqMessage }}</p>
     </div>
-    <div class="form-group custom-inp-file">
+
+    <div class="form-group custom-inp-file pt-2">
       <label for="uploadfile">Yüklə</label>
       <input
         type="file"
-        accept="image/svg+xml, image/png"
+        accept=".svg, .png, .jpg, .jpeg, .pdf, .doc, .docx, .xlsx, .ppt, .pptx"
         class="form-control"
         id="uploadfile"
-        (change)="onFileSelected($event)"
+        (change)="onFilesSelected($event)"
         formControlName="caseEvaluationAttachments"
+        multiple
       />
     </div>
-    <!--Required message-->
+
+    <!-- Validation messages for file input -->
     <div
-      class="validationMessage d-flex justify-content-start"
+      class="validationMessage d-flex justify-content-start pt-2"
       *ngIf="
         evaluateForm.get('caseEvaluationAttachments')?.invalid &&
         evaluateForm.get('caseEvaluationAttachments')?.touched
@@ -70,11 +68,48 @@
     >
       <p class="pb-2 m-0">{{ Language.reqMessage }}</p>
     </div>
+
+    <!-- Add a message for invalid file type or size -->
+    <div
+      class="validationMessage d-flex justify-content-start"
+      *ngIf="files.length === 0 && (invalidFileType || fileSizeExceeded)"
+    >
+      <p class="pt-2 pb-2 m-0">
+        {{
+          invalidFileType
+            ? Language.fileTypeErrorMessage
+            : Language.fileSizeErrorMessage
+        }}
+      </p>
+    </div>
+
     <div class="d-flex justify-content-end pb-5 pt-4">
-      <button class="free_btn" (click)="submitEvaluation()">Send</button>
+      <!--Submit button-->
+      <button
+        mat-raised-button
+        type="submit"
+        disableRipple
+        disableFocusRipple
+        class="custom-button free_btn mt-2 py-2"
+        [disabled]="evaluateForm.invalid"
+        [ngClass]="{
+          'disabled-button': evaluateForm.invalid || buttonSpinner
+        }"
+        (click)="submitEvaluation()"
+      >
+        <div class="d-flex justify-content-center">
+          <mat-spinner
+            [diameter]="20"
+            *ngIf="buttonSpinner"
+            class="custom-mat-spinner"
+          ></mat-spinner>
+          <span *ngIf="!buttonSpinner">{{ Language.btnSubmit }}</span>
+        </div>
+      </button>
+      <!--/Submit button-->
     </div>
   </form>
+  <!--Toasts-->
+  <p-toast></p-toast>
+  <!--/Toasts-->
 </div>
-<!--Toasts-->
-<p-toast></p-toast>
-<!--/Toasts-->

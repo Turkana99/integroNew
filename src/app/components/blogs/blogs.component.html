@@ -20,12 +20,12 @@
 
 <!-- Blog -->
 <div class="blog content pb-5">
-  <div class="d-flex flex-column align-items-center pt-5">
-    <span>{{ settingInfo.subTitle }}</span>
-    <h1>{{ settingInfo.title }}</h1>
+  <div class="d-flex flex-column align-items-center pt-4">
+    <span [@backInUp]>{{ settingInfo.subTitle }}</span>
+    <h1 class="p-0 m-0" [@backInUp]>{{ settingInfo.title }}</h1>
   </div>
-  <div class="row m-0 p-0 blog_item">
-    <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogInfo">
+  <div class="row m-0 blog_item pb-4 pt-4">
+    <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogInfo" [@bounceInUp]>
       <div class="blog-card mx-2 my-1">
         <p-card [header]="blog.title" class="w-100 p-0 m-0">
           <ng-template pTemplate="header">
@@ -41,7 +41,7 @@
                 styleClass="w-full"
                 [routerLink]="['/blog-detail', blog.id]"
               >
-                Read More <i class="fa-solid fa-right-long ps-2"></i>
+                {{Language.more}} <i class="fa-solid fa-right-long ps-2"></i>
               </p-button>
             </div>
           </ng-template>

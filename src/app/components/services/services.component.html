@@ -20,31 +20,15 @@
 
 <!-- Services -->
 <div class="d-flex flex-column align-items-center title pt-5">
-  <span>{{ settingInfo.subTitle }}</span>
-  <h1 class="pb-4">{{ settingInfo.title }}</h1>
+  <span [@bounceInUp]>{{ settingInfo.subTitle }}</span>
+  <h1 [@bounceInUp]>{{ settingInfo.title }}</h1>
 </div>
 
-<!-- <div class="services-container content pb-5">
-  <div class="services">
-    <div class="services-row" *ngFor="let item of rows; let i = index">
-      <div class="service_item me-3" *ngFor="let element of item; let i = index">
-        <div class="border-line d-flex flex-column align-items-center py-4">
-          <div
-            class="service_img d-flex justify-content-center align-items-center"
-          >
-            <img src="{{ element.img }}" />
-          </div>
-          <p class="pt-4 py-0 m-0">{{ element.name }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="row service-wrapper d-flex justify-content-center content pb-5 m-0">
+<div class="row service-wrapper d-flex justify-content-center content pb-5 m-0 mb-5">
   <div
     class="col-lg-3 col-md-6 col-sm-12 col-12 d-flex flex-column align-items-center justify-content-center px-2 py-2"
     *ngFor="let item of serviceInfo; let i = index"
+    [@backInUp]
   >
     <a
       [routerLink]="['/service-detail', item.id]"
