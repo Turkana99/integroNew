@@ -36,9 +36,7 @@
     border-radius: 30px !important;
   }
   .workerInfo {
-    position: absolute;
-    top: 27%;
-    overflow-y: auto;
+    overflow-y: auto !important;
   }
 }
 
@@ -46,10 +44,13 @@
   padding-top: 0px;
   margin-top: 0px;
 }
-
+::ng-deep .mat-mdc-dialog-container{
+  overflow: auto !important;
+}
 ::ng-deep .mat-mdc-dialog-content .mdc-dialog__content .mat-typography {
   max-height: 200px !important;
 }
+
 button {
   background-color: $main-color;
   font-family: "Poppins", sans-serif !important;

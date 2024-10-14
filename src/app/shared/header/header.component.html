@@ -4,24 +4,28 @@
       <div
         class="navbar-brand d-flex justify-content-start align-items-center gap-2"
       >
-        <div class="logo">
-          <img
-            class="white-logo frs_logo"
-            src="assets/images/Logo.svg"
-            alt="Logo"
-            [ngStyle]="{ opacity: whiteLogo ? 0 : 1 }"
-          />
-          <img
-            class="white-logo scd_logo"
-            src="assets/images/LogoWh.svg"
-            alt="Logo"
-            [ngStyle]="{ opacity: whiteLogo ? 1 : 0 }"
-          />
-        </div>
+        <a routerLink="main">
+          <div class="logo">
+            <img
+              class="white-logo frs_logo"
+              src="assets/images/Logo.svg"
+              alt="Logo"
+              [ngStyle]="{ opacity: whiteLogo ? 0 : 1 }"
+            />
+            <img
+              class="white-logo scd_logo"
+              src="assets/images/LogoWh.svg"
+              alt="Logo"
+              [ngStyle]="{ opacity: whiteLogo ? 1 : 0 }"
+            />
+          </div>
+        </a>
+        <a routerLink="main">
         <div class="d-flex flex-column align-items-center pt-2">
           <span class="py-0 m-0">INTEGRO</span>
           <p class="p-0 m-0">ATTORNEYS & CONSULTANTS</p>
         </div>
+        </a>
       </div>
       <button
         class="navbar-toggler custom-toggler pt-3"
@@ -45,8 +49,10 @@
               routerLink="main"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.homePage}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.homePage }}
+            </a>
           </li>
           <li class="nav-item px-2">
             <a
@@ -54,8 +60,10 @@
               routerLink="about"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.about}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.about }}
+            </a>
           </li>
           <li class="nav-item px-2">
             <a
@@ -63,8 +71,10 @@
               routerLink="service"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.service}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.service }}
+            </a>
           </li>
           <li class="nav-item px-2">
             <a
@@ -72,8 +82,10 @@
               routerLink="team"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.team}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.team }}
+            </a>
           </li>
           <li class="nav-item px-2">
             <a
@@ -81,8 +93,10 @@
               routerLink="partner"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.partner}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.partner }}
+            </a>
           </li>
           <li class="nav-item px-2">
             <a
@@ -90,8 +104,10 @@
               routerLink="blog"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.blog}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.blog }}
+            </a>
           </li>
           <li class="nav-item px-2">
             <a
@@ -99,8 +115,10 @@
               routerLink="contact"
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="router-link-active"
-              >{{Language.contact}}</a
+              (click)="closeNavbar()"
             >
+              {{ Language.contact }}
+            </a>
           </li>
 
           <!-- Language Dropdown -->

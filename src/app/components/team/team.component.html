@@ -21,11 +21,11 @@
 <!--Team-->
 <section class="creative-team-section team">
   <div class="content">
-    <div class="creative-title--wrap pt-5 pb-4">
+    <div class="creative-title--wrap">
       <p class="p-0 m-0" [@backInUp]>{{ settingInfo.subTitle }}</p>
       <h1 [@backInUp] class="pb-0 m-0">{{ settingInfo.title }}</h1>
     </div>
-    <div class="row pt-0">
+    <div class="row">
       <div class="creative-team--block px-4" *ngFor="let item of teamInfo" [@bounceInUp]>
         <div class="inner-box px-3">
           <div class="image-box">
@@ -34,8 +34,8 @@
             </figure>
             <div class="info-box">
               <h4 class="name">{{ item.fullName }}</h4>
-              <span class="designation">{{ item.position }}</span
-              ><span class="share-icon fa fa-share-alt"></span>
+              <span class="designation">{{ item.position }}</span>
+              <span class="share-icon fa fa-share-alt"></span>
               <div class="social-links">
                 <a (click)="openDialog(item.id)" target="_blank"
                   ><i class="fa-solid fa-eye"></i

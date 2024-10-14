@@ -109,7 +109,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  p{
+  p {
     font-size: 0.8rem;
     line-height: 20px;
     font-family: "Poppins", sans-serif !important;
@@ -122,10 +122,9 @@
   line-height: 18px;
   font-family: "Poppins", sans-serif !important;
 }
-::ng-deep   .p-card .p-card-footer {
+::ng-deep .p-card .p-card-footer {
   padding: 0px;
 }
-
 
 ::ng-deep .p-card-content {
   flex-grow: 1;
@@ -153,16 +152,16 @@ img {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 48px;
-    line-height: 50px;
+    font-size: 48px!important;
+    line-height: 50px!important;
   }
 
   span {
-    font-size: 14px;
+    font-size: 14px!important;
   }
 
   .blog_item {
-    padding: 20px 15px;
+    padding: 20px 15px!important;
   }
 
   .blog_item .col-lg-4 {
@@ -174,16 +173,16 @@ img {
 
 @media (max-width: 576px) {
   h1 {
-    font-size: 36px;
-    line-height: 40px;
+    font-size: 36px!important;
+    line-height: 30px!important;
   }
 
   span {
-    font-size: 12px;
+    font-size: 12px!important;
   }
 
   .blog_item {
-    padding: 15px;
+    padding: 10px!important;
   }
 
   .blog_item .col-lg-4 {

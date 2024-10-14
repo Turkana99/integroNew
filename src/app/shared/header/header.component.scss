@@ -64,7 +64,8 @@ $tl: 0.6s;
     }
 
     .nav-item.dropdown .dropdown-menu .dropdown-item {
-      color: black!important;
+      color: black !important;
+      cursor: pointer;
       &::before {
         content: none;
       }
@@ -82,6 +83,9 @@ $tl: 0.6s;
   }
 
   & .navbar-brand {
+    a {
+      text-decoration: none;
+    }
     font-family: "Poppins", sans-serif !important;
 
     .logo {
@@ -99,7 +103,7 @@ $tl: 0.6s;
       font-weight: bold;
       font-size: 24px;
       letter-spacing: -0.8px;
-      text-align: center!important;
+      text-align: center !important;
       padding: 0px;
     }
 
