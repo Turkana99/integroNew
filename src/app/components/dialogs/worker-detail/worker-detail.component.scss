@@ -2,6 +2,7 @@
 
 .workerDetail {
   font-family: "Poppins", sans-serif !important;
+  
   span {
     font-size: 16px;
     color: $title-color;
@@ -14,29 +15,132 @@
     font-weight: 700;
     line-height: 60px;
   }
+
   p {
     font-size: 14px;
   }
+
   .close-icon {
     font-size: 26px;
   }
+
   button {
     border: none;
     background-color: transparent;
     color: $main-color;
   }
+
   .workerMain {
     position: fixed !important;
     background-color: #faf9fd !important;
   }
+
   .line {
     width: 100%;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 30px !important;
   }
+
   .workerInfo {
     overflow-y: auto !important;
+  }
+
+  // Responsive Styles
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    .close-icon {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    button {
+      font-size: 13px;
+      padding: 5px 15px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 36px;
+      line-height: 45px;
+    }
+
+    span {
+      font-size: 13px;
+    }
+
+    .close-icon {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    button {
+      font-size: 12px;
+      padding: 5px 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    .close-icon {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 11px;
+    }
+
+    button {
+      font-size: 11px;
+      padding: 5px 10px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 28px;
+      line-height: 35px;
+    }
+
+    span {
+      font-size: 11px;
+    }
+
+    .close-icon {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+
+    button {
+      font-size: 10px;
+      padding: 5px 8px;
+    }
   }
 }
 
@@ -44,9 +148,11 @@
   padding-top: 0px;
   margin-top: 0px;
 }
-::ng-deep .mat-mdc-dialog-container{
+
+::ng-deep .mat-mdc-dialog-container {
   overflow: auto !important;
 }
+
 ::ng-deep .mat-mdc-dialog-content .mdc-dialog__content .mat-typography {
   max-height: 200px !important;
 }
@@ -60,13 +166,18 @@ button {
   font-weight: 400 !important;
   border-radius: 5px;
   padding: 5px 20px;
+
   &:hover {
     background-color: white;
     border: 1px solid $main-color;
     color: $main-color;
     font-weight: bold !important;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transition: background-color 600ms, color 600ms, box-shadow 600ms,
-      font-weight 600ms;
+    transition: background-color 600ms, color 600ms, box-shadow 600ms, font-weight 600ms;
   }
+}
+
+::ng-deep .cdk-global-overlay-wrapper {
+  overflow: auto;
+  pointer-events: auto;
 }

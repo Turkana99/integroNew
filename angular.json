@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Test:build:production"
+              "buildTarget": "integro:build:production"
             },
             "development": {
-              "buildTarget": "Test:build:development"
+              "buildTarget": "integro:build:development"
             }
           },
           "defaultConfiguration": "development"

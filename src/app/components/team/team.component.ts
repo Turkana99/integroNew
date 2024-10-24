@@ -116,9 +116,8 @@ export class TeamComponent {
     this.dialog
       .open(WorkerDetailComponent, {
         width: '800px',
-        minHeight: '500px',
-        autoFocus: false,
-        hasBackdrop: true,
+        maxHeight: '550px',
+        disableClose: true,
         data: { memberId: id },
         position: {
           top: '50px',
