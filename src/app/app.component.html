@@ -1,4 +1,10 @@
+@if(isMainRoute){
+<app-headerWh></app-headerWh>
+}
+@if(!isMainRoute){
 <app-header></app-header>
+}
+<!-- <app-headerNew></app-headerNew> -->
 <div class="chg-content">
   <router-outlet></router-outlet>
 </div>

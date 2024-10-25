@@ -1,4 +1,4 @@
-const apiUrl = 'https://api-int-test.fhn.gov.az/api/v1';
+const apiUrl = 'https://api.integrolaw.az/api/v1';
 
 export const environment = {
   production: false,

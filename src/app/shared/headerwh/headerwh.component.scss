@@ -1,0 +1,286 @@
+@import "../../styles/variables.scss";
+
+$tl: 0.6s;
+.content {
+  padding: 0px 50px;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  /* Base styles for .navbar */
+  .navbar {
+    width: 100%;
+    background-color: transparent;
+
+    .navbar-nav .nav-item a {
+      color: white;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      overflow: hidden;
+      transition: color 0.3s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background-color: White;
+        transition: width 0.6s ease;
+      }
+
+      &:hover:not(&.router-link-active, &.dropdown-toggle)::before {
+        width: 100%;
+      }
+    }
+    .text-uppercase::first-letter {
+      text-transform: uppercase;
+    }
+
+    /* Remove hover effect from active links */
+    .router-link-active {
+      color: white;
+      font-weight: bold;
+      border-bottom: 1px solid white;
+
+      /* Remove hover effect */
+      &:hover {
+        color: $main-color;
+      }
+
+      &::before {
+        width: 100%;
+        background-color: $main-color;
+      }
+    }
+
+    .nav-item.dropdown .dropdown-menu .dropdown-item {
+      //   color: black !important;
+      color: white;
+      cursor: pointer;
+      &::before {
+        content: none;
+      }
+
+      &:hover {
+        background-color: $main-color;
+        color: white !important;
+      }
+    }
+
+    .navbar-nav > li > .dropdown-menu a:active {
+      background-color: $main-color;
+      color: white;
+    }
+  }
+
+  & .navbar-brand {
+    a {
+      text-decoration: none;
+      color: white !important;
+    }
+    font-family: "Poppins", sans-serif !important;
+
+    .logo {
+      position: relative;
+      width: 65px;
+      height: 65px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    span {
+      //   color: $main-color;
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: -0.8px;
+      text-align: center !important;
+      padding: 0px;
+    }
+
+    p {
+      //   color: $title-color;
+      font-size: 8px;
+      font-weight: 500;
+      padding: 0px;
+    }
+  }
+
+  .router-link-active {
+    color: $main-color;
+    font-weight: bold;
+    border-bottom: 1px solid $main-color;
+  }
+
+  /* Styles for when .navbar-inverse is applied */
+  &.navbar-inverse {
+    background-color: $main-color !important;
+
+    .navbar-nav .nav-item a {
+      color: white !important;
+      &::before {
+        background-color: white !important;
+      }
+    }
+
+    .router-link-active {
+      color: white !important;
+      border-bottom: 1px solid white !important;
+    }
+
+    .navbar-brand {
+      span,
+      p {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.white-logo {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 300ms ease;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.custom-toggler {
+  border: none;
+  font-size: 20px !important;
+  color: white !important;
+}
+
+.navbar-nav > li > .dropdown-menu .dropdown-item {
+  color: gray !important;
+}
+
+/* Hide the toggler button on larger screens */
+@media (min-width: 1200px) {
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 1235px) {
+  .navbar-brand {
+    margin-right: 6px !important;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .content {
+    padding: 0px;
+  }
+
+  .header {
+    padding: 0 !important;
+    justify-content: start;
+    overflow-y: auto !important;
+
+    .navbar {
+      width: 100%;
+      overflow-y: auto !important;
+      background-color: $main-color !important;
+      .navbar-nav {
+        display: block !important;
+        width: 100%;
+        .nav-item a {
+          color: white !important;
+          &::before {
+            background-color: white !important;
+          }
+        }
+      }
+    }
+
+    .collapse {
+      padding-top: 20px;
+    }
+
+    .navbar-toggler .custom-toggler {
+      display: block !important;
+    }
+
+    .frs_logo {
+      opacity: 0 !important;
+    }
+
+    .scd_logo {
+      opacity: 1 !important;
+    }
+
+    .navbar-brand {
+      span {
+        color: white !important;
+      }
+
+      p {
+        color: white !important;
+      }
+    }
+
+    .navbar-expand-lg {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .navbar-expand-lg .navbar-toggler {
+      display: block;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+      display: none !important;
+      flex-basis: 100%;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    .navbar-expand-lg .navbar-collapse.collapse.show {
+      display: flex !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header {
+    padding: 0 !important;
+    justify-content: start;
+    overflow-y: auto !important;
+
+    .navbar {
+      width: 100%;
+      overflow-y: auto !important;
+    }
+
+    .collapse {
+      padding-top: 20px;
+    }
+
+    .navbar-nav .nav-item a {
+      color: white !important; /* Ensure good contrast on smaller screens */
+    }
+
+    .navbar {
+      background-color: $main-color !important;
+    }
+  }
+}
