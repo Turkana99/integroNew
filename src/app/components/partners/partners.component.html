@@ -25,9 +25,10 @@
     <h1 class="p-0 m-0" [@backInUp]>{{ settingInfo.title }}</h1>
   </div>
   <div class="d-flex justify-content-center m-0 px-0">
-    <div class="row m-0 pb-4 part_item">
+    <div class="row w-100 m-0 pt-2 pb-4 part_item">
       <div
-        class="partners_items col-lg-2 col-md-4 col-sm-12 d-flex align-items-center justify-content-center"
+        class="partners_items col-lg-2 col-md-4 col-sm-12 d-flex align-items-center justify-content-center gap-5
+        "
         *ngFor="let partner of partnerInfo" [@bounceInUp]
       >
         <div class="d-flex border_line p-3">
