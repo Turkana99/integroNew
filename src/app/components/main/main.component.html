@@ -13,7 +13,7 @@
       <div class="w-50 d-flex flex-column justify-content-center align-items-center">
         <p class="sub_title">{{ homePageInfo.subTitle }}</p>
         <h1>{{ homePageInfo.title }}</h1>
-        <p class="content py-4">{{ homePageInfo.text }}</p>
+        <p class="content py-4" [innerHTML]="homePageInfo.text"></p>
         <div>
           <button routerLink="/evaluation" class="free_btn py-3 px-5">
             {{ Language.homeBtn }}
