@@ -1,3 +1,22 @@
-.chg-content{
-    min-height: calc(100vh - 324px)!important;
+.chg-content {
+  min-height: calc(100vh - 324px) !important;
+}
+.main {
+  position: relative;
+  z-index: 1s;
+}
+
+.wp {
+  position: fixed;
+  top: 87%;
+  right: 1.5%;
+  z-index: 10;
+  background-image: url(../assets/images/wp4.webp);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 70px;
+  border-radius: 500px !important;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }

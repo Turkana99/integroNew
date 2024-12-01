@@ -1,11 +1,15 @@
-@if(isMainRoute){
-<app-headerWh></app-headerWh>
-}
-@if(!isMainRoute){
-<app-header></app-header>
-}
-<!-- <app-headerNew></app-headerNew> -->
-<div class="chg-content">
-  <router-outlet></router-outlet>
+<div class="main p-0 m-0">
+  <a href="">
+    <div class="wp"></div>
+  </a>
+  @if(isMainRoute){
+  <app-headerWh></app-headerWh>
+  } @if(!isMainRoute){
+  <app-header></app-header>
+  }
+  <!-- <app-headerNew></app-headerNew> -->
+  <div class="chg-content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>
