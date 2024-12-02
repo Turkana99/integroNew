@@ -102,7 +102,7 @@
       width: 100%;
       height: auto; // Change to auto for responsive height
       max-height: 400px; // Set a max height for images
-      object-fit: cover;
+      object-fit: contain;
 
       @media (max-width: 768px) {
         max-height: 300px; // Reduce max height for smaller screens
