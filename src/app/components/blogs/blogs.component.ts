@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlogService } from '../../core/services/blog.service';
 import { LanguageService } from '../../core/services/lang.service';
 import { catchError, forkJoin, of } from 'rxjs';
+import { TooltipModule } from 'primeng/tooltip';
+import { PaginatorModule } from 'primeng/paginator';
 import {
   animate,
   keyframes,
@@ -14,6 +16,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { MaterialModule } from '../../material.module';
 
 @Component({
   selector: 'app-blogs',
@@ -24,6 +27,9 @@ import {
     CardModule,
     ButtonModule,
     HttpClientModule,
+    TooltipModule,
+    PaginatorModule,
+    MaterialModule
   ],
   providers: [BlogService],
   templateUrl: './blogs.component.html',

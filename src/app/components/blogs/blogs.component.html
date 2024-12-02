@@ -19,14 +19,18 @@
 </div>
 
 <!-- Blog -->
-<div class="blog content pb-5">
+<div class="blog content pb-5 pt-3">
   <div class="d-flex flex-column align-items-center pt-4">
     <span [@backInUp]>{{ settingInfo.subTitle }}</span>
     <h1 class="p-0 m-0" [@backInUp]>{{ settingInfo.title }}</h1>
   </div>
-  <div class="row m-0 blog_item pb-4 pt-4">
-    <div class="col-lg-4 col-md-6 col-sm-12 px-0" *ngFor="let blog of blogInfo" [@bounceInUp]>
-      <div class="blog-card mx-2 my-1">
+  <!-- <div class="row mx-0 blog_item py-4">
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 px-0 pt-3"
+      *ngFor="let blog of blogInfo"
+      [@bounceInUp]
+    >
+      <div class="blog-card mx-2 my-1 w-100">
         <p-card [header]="blog.title" class="w-100 p-0 m-0">
           <ng-template pTemplate="header">
             <img alt="Card" [src]="blog.coverImageUrl" />
@@ -41,11 +45,55 @@
                 styleClass="w-full"
                 [routerLink]="['/blog-detail', blog.id]"
               >
-                {{Language.more}} <i class="fa-solid fa-right-long ps-2"></i>
+                {{ Language.more }} <i class="fa-solid fa-right-long ps-2"></i>
               </p-button>
             </div>
           </ng-template>
         </p-card>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="w-100 row d-flex justify-content-start m-0 pt-4">
+    <div
+      class="my-card col-lg-4 col-md-6 col-sm-12 col-12 d-flex justify-content-start pb-2 mb-3"
+      *ngFor="let blog of blogInfo"
+      [@bounceInUp]
+    >
+      <div class="w-100 h-100">
+        <a [routerLink]="['/blog-detail', blog.id]">
+          <mat-card class="w-100 example-card">
+            <div class="sec_img">
+              <img
+                mat-card-image
+                [src]="blog.coverImageUrl"
+                [alt]="blog?.name"
+              />
+            </div>
+            <mat-card-content
+              class="pt-3 px-3 h-100 d-flex flex-column justify-content-between"
+            >
+              <div>
+                <span class="sec_title m-0">{{ blog?.title }}</span>
+
+                <hr />
+                <p class="sec_content" [innerHTML]="blog.shortDescription"></p>
+              </div>
+
+              <div class="d-flex flex-column justify-content-between mt-1 p-0">
+                <p-button
+                  severity="secondary"
+                  class="w-full p-0 m-0"
+                  styleClass="w-full"
+                  [routerLink]="['/blog-detail', blog.id]"
+                >
+                  {{ Language.more }}
+                  <i class="fa-solid fa-right-long ps-2"></i>
+                </p-button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </a>
       </div>
     </div>
   </div>
